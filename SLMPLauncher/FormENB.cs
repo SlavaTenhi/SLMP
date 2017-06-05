@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace SLMPLauncher
 {
-    public partial class FormENBMenu : Form
+    public partial class FormENB : Form
     {
         public static string enbLocal = FormMain.gameFolder + "enblocal.ini";
         string enbSeries = FormMain.gameFolder + "enbseries.ini";
@@ -27,7 +27,7 @@ namespace SLMPLauncher
         bool ambocc = false;
         bool waitbuffer = false;
 
-        public FormENBMenu()
+        public FormENB()
         {
             InitializeComponent();
             Directory.SetCurrentDirectory(FormMain.launcherFolder);
@@ -130,6 +130,7 @@ namespace SLMPLauncher
         private void refreshTrackBar1()
         {
             FuncMisc.RefreshTrackBar(trackBar1, enbLocal, "MEMORY", "ReservedMemorySizeMb", 128, label2);
+            label2.Text = label2.Text + " MB";
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void buttonAA_Click(object sender, EventArgs e)

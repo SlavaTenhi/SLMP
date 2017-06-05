@@ -414,7 +414,7 @@ namespace SLMPLauncher
         private void buttonENBmenu_Click(object sender, EventArgs e)
         {
             label1.Focus();
-            var form = new FormENBMenu();
+            var form = new FormENB();
             form.ShowDialog();
             form = null;
         }

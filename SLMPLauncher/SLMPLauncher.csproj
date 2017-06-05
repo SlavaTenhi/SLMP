@@ -74,11 +74,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FuncClear.cs" />
-    <Compile Include="FormENBMenu.cs">
+    <Compile Include="FormENB.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormENBMenu.Designer.cs">
-      <DependentUpon>FormENBMenu.cs</DependentUpon>
+    <Compile Include="FormENB.Designer.cs">
+      <DependentUpon>FormENB.cs</DependentUpon>
     </Compile>
     <Compile Include="FuncFiles.cs" />
     <Compile Include="FuncMisc.cs" />
@@ -144,8 +144,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FormENBMenu.resx">
-      <DependentUpon>FormENBMenu.cs</DependentUpon>
+    <EmbeddedResource Include="FormENB.resx">
+      <DependentUpon>FormENB.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">

@@ -1,6 +1,6 @@
 ﻿namespace SLMPLauncher
 {
-	partial class FormENBMenu
+	partial class FormENB
 	{
 		private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.ListBox listBox1;
@@ -233,7 +233,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label8.Location = new System.Drawing.Point(1, 186);
+            this.label8.Location = new System.Drawing.Point(1, 132);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(154, 20);
             this.label8.TabIndex = 0;
@@ -254,7 +254,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label9.Location = new System.Drawing.Point(1, 159);
+            this.label9.Location = new System.Drawing.Point(1, 213);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(154, 20);
             this.label9.TabIndex = 0;
@@ -298,7 +298,7 @@
             this.buttonDOF.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonDOF.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonDOF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDOF.Location = new System.Drawing.Point(161, 185);
+            this.buttonDOF.Location = new System.Drawing.Point(161, 131);
             this.buttonDOF.Name = "buttonDOF";
             this.buttonDOF.Size = new System.Drawing.Size(50, 22);
             this.buttonDOF.TabIndex = 0;
@@ -316,7 +316,7 @@
             this.buttonDriver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonDriver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonDriver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDriver.Location = new System.Drawing.Point(161, 158);
+            this.buttonDriver.Location = new System.Drawing.Point(161, 212);
             this.buttonDriver.Name = "buttonDriver";
             this.buttonDriver.Size = new System.Drawing.Size(50, 22);
             this.buttonDriver.TabIndex = 0;
@@ -356,7 +356,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label11.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label11.Location = new System.Drawing.Point(1, 213);
+            this.label11.Location = new System.Drawing.Point(1, 159);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(154, 20);
             this.label11.TabIndex = 0;
@@ -373,7 +373,7 @@
             this.buttonAmbientOcclusion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonAmbientOcclusion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonAmbientOcclusion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAmbientOcclusion.Location = new System.Drawing.Point(161, 212);
+            this.buttonAmbientOcclusion.Location = new System.Drawing.Point(161, 158);
             this.buttonAmbientOcclusion.Name = "buttonAmbientOcclusion";
             this.buttonAmbientOcclusion.Size = new System.Drawing.Size(50, 22);
             this.buttonAmbientOcclusion.TabIndex = 0;
@@ -409,7 +409,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(1, 132);
+            this.label6.Location = new System.Drawing.Point(1, 186);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(154, 20);
             this.label6.TabIndex = 0;
@@ -435,7 +435,7 @@
             this.buttonWaitBuffer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonWaitBuffer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonWaitBuffer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonWaitBuffer.Location = new System.Drawing.Point(161, 131);
+            this.buttonWaitBuffer.Location = new System.Drawing.Point(161, 185);
             this.buttonWaitBuffer.Name = "buttonWaitBuffer";
             this.buttonWaitBuffer.Size = new System.Drawing.Size(50, 22);
             this.buttonWaitBuffer.TabIndex = 0;
@@ -559,23 +559,27 @@
             this.comboBox2.TabIndex = 35;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
-            // FormENBMenu
+            // FormENB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SLMPLauncher.Properties.Resources.FormBackgroundNone;
             this.ClientSize = new System.Drawing.Size(478, 325);
             this.ControlBox = false;
+            this.Controls.Add(this.buttonWaitBuffer);
+            this.Controls.Add(this.buttonAmbientOcclusion);
+            this.Controls.Add(this.buttonDriver);
+            this.Controls.Add(this.buttonDOF);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonFPS);
             this.Controls.Add(this.buttonAF);
-            this.Controls.Add(this.buttonWaitBuffer);
-            this.Controls.Add(this.buttonAmbientOcclusion);
-            this.Controls.Add(this.buttonDriver);
-            this.Controls.Add(this.buttonDOF);
             this.Controls.Add(this.buttonSubPixelAA);
             this.Controls.Add(this.buttonTemporalAA);
             this.Controls.Add(this.buttonAA);
@@ -588,12 +592,8 @@
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.trackBar1);
@@ -607,7 +607,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FormENBMenu";
+            this.Name = "FormENB";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

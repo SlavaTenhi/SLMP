@@ -207,14 +207,14 @@ namespace SLMPLauncher
         {
             if (File.Exists(FormMain.gameFolder + "d3d9.dll"))
             {
-                FuncParser.iniWrite(FormENBMenu.enbLocal, "WINDOW", "ForceBorderless", line);
+                FuncParser.iniWrite(FormENB.enbLocal, "WINDOW", "ForceBorderless", line);
             }
         }
         private static void setVsync(string line)
         {
             if (File.Exists(FormMain.gameFolder + "d3d9.dll"))
             {
-                FuncParser.iniWrite(FormENBMenu.enbLocal, "ENGINE", "EnableVSync", line);
+                FuncParser.iniWrite(FormENB.enbLocal, "ENGINE", "EnableVSync", line);
             }
         }
     }

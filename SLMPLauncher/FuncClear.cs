@@ -551,11 +551,6 @@ namespace SLMPLauncher
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         public static void OSA()
         {
-            if (File.Exists(FormMain.gameFolder + @"Data\SKSE\Plugins\hdtPhysicsExtensionsDefaultBBP_ORIG.xml"))
-            {
-                FuncFiles.Delete(FormMain.gameFolder + @"Data\SKSE\Plugins\hdtPhysicsExtensionsDefaultBBP.xml");
-                FuncFiles.MoveAnyFiles(FormMain.gameFolder + @"Data\SKSE\Plugins\hdtPhysicsExtensionsDefaultBBP_ORIG.xml", FormMain.gameFolder + @"Data\SKSE\Plugins\hdtPhysicsExtensionsDefaultBBP.xml");
-            }
             FuncFiles.Delete(FormMain.gameFolder + @"Data\OSAsex.esp");
             FuncFiles.Delete(FormMain.gameFolder + @"Data\OSAsex.bsa");
             FuncFiles.Delete(FormMain.gameFolder + @"Data\Naked.esp");
@@ -587,6 +582,8 @@ namespace SLMPLauncher
         {
             FuncFiles.Delete(FormMain.gameFolder + @"Data\Tunic.esp");
             FuncFiles.Delete(FormMain.gameFolder + @"Data\Tunic.bsa");
+            FuncFiles.Delete(FormMain.gameFolder + @"Data\NIOVHH.esp");
+            FuncFiles.Delete(FormMain.gameFolder + @"Data\NIOVHH.bsa");
         }
         public static void AS()
         {

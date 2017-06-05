@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
@@ -21,6 +22,9 @@ namespace SLMPLauncher
         bool updatesCPFound = false;
         bool updateInstall = false;
         int numberSelectFile = -1;
+        List<int> realIndexI = new List<int>();
+        List<int> realIndex = new List<int>();
+        List<string> installPreLoad = new List<string>();
         WebClient client = new WebClient();
 
         public FormUpdates()
@@ -71,6 +75,9 @@ namespace SLMPLauncher
                     FuncFiles.Delete(updateFolder + nameUpdateInfo);
                     downloadFileName = nameUpdateInfo;
                     downloadFileType = "CheckU";
+                    realIndexI.Clear();
+                    realIndex.Clear();
+                    installPreLoad.Clear();
                     client_DownloadProgressStart();
                 }
             }
@@ -183,12 +190,30 @@ namespace SLMPLauncher
                         int CountComboBox = FuncParser.intRead(updateFolder + nameUpdateInfo, "General", "numbers_files_update");
                         if (CountComboBox > 0)
                         {
-                            for (int i = 0; i < CountComboBox; i++)
+                            for (int i = 1; i <= CountComboBox; i++)
                             {
-                                comboBox1.Items.Add("");
-                                comboBox1.SelectedIndex = comboBox1.Items.Count - 1;
+                                comboBox1.SelectedIndexChanged -= comboBox1_SelectedIndexChanged;
+                                if (checkUpdateVersion(i))
+                                {
+                                    realIndexI.Add(i);
+                                    installPreLoad.Add("Установлено / " + FuncParser.stringRead(updateFolder + nameUpdateInfo, "Update_" + i, "update_file"));
+                                }
+                                else
+                                {
+                                    realIndex.Add(i);
+                                    comboBox1.Items.Add("Обновление / " + FuncParser.stringRead(updateFolder + nameUpdateInfo, "Update_" + i, "update_file"));
+                                }
+                                comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
                             }
-                            comboBox1.SelectedIndex = 0;
+                            for (int i = 0; i < realIndexI.Count; i++)
+                            {
+                                realIndex.Add(realIndexI[i]);
+                                comboBox1.Items.Add(installPreLoad[i]);
+                            }
+                            if (comboBox1.Items.Count > 0)
+                            {
+                                comboBox1.SelectedIndex = 0;
+                            }
                             updatesFound = true;
                             label4.Text = CountComboBox.ToString();
                         }
@@ -292,42 +317,35 @@ namespace SLMPLauncher
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            numberSelectFile = comboBox1.SelectedIndex + 1;
-            double UpdateVersion1 = FuncParser.doubleRead(updateFolder + nameUpdateInfo, "Update_" + numberSelectFile, "update_file_version");
+            numberSelectFile = realIndex[comboBox1.SelectedIndex];
+            if (checkUpdateVersion(numberSelectFile))
+            {
+                updateInstall = true;
+                comboBox1.SelectedIndexChanged -= comboBox1_SelectedIndexChanged;
+                comboBox1.Items[comboBox1.SelectedIndex] = "Установлено / " + FuncParser.stringRead(updateFolder + nameUpdateInfo, "Update_" + numberSelectFile, "update_file");
+                comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            }
+            else
+            {
+                updateInstall = false;
+            }
+            EnableDisableButtons();
+        }
+        private bool checkUpdateVersion(int index)
+        {
+            double UpdateVersion1 = FuncParser.doubleRead(updateFolder + nameUpdateInfo, "Update_" + index, "update_file_version");
             if (UpdateVersion1 != -1)
             {
-                double UpdateVersion2 = FuncParser.doubleRead(FormMain.iniLauncher, "Updates", "Update_" + numberSelectFile + "_Version");
+                double UpdateVersion2 = FuncParser.doubleRead(FormMain.iniLauncher, "Updates", "Update_" + index + "_Version");
                 if (UpdateVersion1 != -1)
                 {
                     if (UpdateVersion1 <= UpdateVersion2)
                     {
-                        updateInstall = true;
-                        SetComboBoxItem("Установлено / ");
-                    }
-                    else
-                    {
-                        updateInstall = false;
-                        SetComboBoxItem("Обновление / ");
+                        return true;
                     }
                 }
-                else
-                {
-                    updateInstall = false;
-                    SetComboBoxItem("Обновление / ");
-                }
             }
-            else
-            {
-                updateInstall = true;
-                SetComboBoxItem("Ошибка / ");
-            }
-            EnableDisableButtons();
-        }
-        private void SetComboBoxItem(string installed)
-        {
-            comboBox1.SelectedIndexChanged -= comboBox1_SelectedIndexChanged;
-            comboBox1.Items[comboBox1.SelectedIndex] = installed + FuncParser.stringRead(updateFolder + nameUpdateInfo, "Update_" + numberSelectFile, "update_file");
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            return false;
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void buttonClose_Click(object sender, EventArgs e)
