@@ -2,15 +2,14 @@
 {
     partial class FormWidget
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.Button buttonStyle1;
+        private System.Windows.Forms.Button buttonStyle2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonUpdates;
+        private System.Windows.Forms.PictureBox pictureBox1;
 
-        /// <summary>
-        /// Clean up any Resource being used.
-        /// </summary>
-        /// <param name="disposing">true if managed Resource should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,12 +19,6 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             this.buttonStyle1 = new System.Windows.Forms.Button();
@@ -136,16 +129,6 @@
             this.Text = "SLMP: Settings Widget";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-
         }
-
-        #endregion
-
-        private System.Windows.Forms.Button buttonStyle1;
-        private System.Windows.Forms.Button buttonStyle2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button buttonUpdates;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -36,7 +36,6 @@ namespace SLMPLauncher
         private void buttonStyle1_Click(object sender, System.EventArgs e)
         {
             FormMain.numberStyle = 1;
-            FuncStyle_1.style_1();
             mainFormStyle = Owner as FormMain;
             mainFormStyle.RefreshStyle();
             ImageBackgroundImageNone();
@@ -45,7 +44,6 @@ namespace SLMPLauncher
         private void buttonStyle2_Click(object sender, System.EventArgs e)
         {
             FormMain.numberStyle = 2;
-            FuncStyle_2.style_2();
             mainFormStyle = Owner as FormMain;
             mainFormStyle.RefreshStyle();
             ImageBackgroundImage();

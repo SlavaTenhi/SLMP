@@ -2,15 +2,23 @@
 {
     partial class FormMods
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button_ModInstall;
+        private System.Windows.Forms.Button buttonDeleteOSA;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonDeleteAS;
+        private System.Windows.Forms.Button buttonDeleteFFC;
+        private System.Windows.Forms.Button buttonDeleteINEED;
+        private System.Windows.Forms.Button buttonDeleteLAD;
+        private System.Windows.Forms.Button buttonDeleteORD;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button buttonClose;
+        private System.Windows.Forms.Button buttonDeleteTunic;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button buttonEarsTails;
 
-        /// <summary>
-        /// Clean up any Resource being used.
-        /// </summary>
-        /// <param name="disposing">true if managed Resource should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,12 +28,6 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -254,25 +256,6 @@
             this.Text = "SLMP: Mods";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-
         }
-
-        #endregion
-
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button_ModInstall;
-        private System.Windows.Forms.Button buttonDeleteOSA;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button buttonDeleteAS;
-        private System.Windows.Forms.Button buttonDeleteFFC;
-        private System.Windows.Forms.Button buttonDeleteINEED;
-        private System.Windows.Forms.Button buttonDeleteLAD;
-        private System.Windows.Forms.Button buttonDeleteORD;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button buttonClose;
-        private System.Windows.Forms.Button buttonDeleteTunic;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button buttonEarsTails;
     }
 }

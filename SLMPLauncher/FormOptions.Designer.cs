@@ -2,15 +2,88 @@
 {
     partial class FormOptions
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonToggleWeapons;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button buttonPapyrus;
+        private System.Windows.Forms.Button buttonClose;
+        private System.Windows.Forms.Button buttonLogsFolder;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button buttonRedateMods;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button buttonActivatedAll;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button buttonRestore;
+        private System.Windows.Forms.ComboBox comboBoxAspect;
+        private System.Windows.Forms.ComboBox comboBoxResolution;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button buttonLow;
+        private System.Windows.Forms.Button buttonMedium;
+        private System.Windows.Forms.Button buttonHight;
+        private System.Windows.Forms.Button buttonUltra;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button buttonAdvancedSettings;
+        private System.Windows.Forms.Button buttonDistance;
+        private System.Windows.Forms.ComboBox comboBoxAdapterIndex;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.Button buttonWindow;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button buttonVsync;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ComboBox comboBoxAA;
+        private System.Windows.Forms.ComboBox comboBoxAF;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Button buttonFXAA;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.ComboBox comboBoxShadowMap;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TrackBar trackBarGrass;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.ComboBox comboBoxWaterReflect;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.ComboBox comboBoxTextures;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.ComboBox comboBoxShadowRange;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.ComboBox comboBoxDecals;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TrackBar trackBarGrassDistance;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TrackBar trackBarObjects;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TrackBar trackBarItems;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TrackBar trackBarActors;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TrackBar trackBarLights;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.ComboBox comboBoxLODObjects;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Button buttonHideObjects;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,12 +93,6 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
@@ -770,10 +837,10 @@
             this.comboBoxWaterReflect.FormattingEnabled = true;
             this.comboBoxWaterReflect.Items.AddRange(new object[] {
             "Ничего",
-            "Только небо",
-            "Земля, небо",
-            "Земля, небо, объекты",
-            "Отражать все"});
+            "+ Небо",
+            "+ Земля",
+            "+ ЛОДы объектов",
+            "+ ЛОДы деревьев"});
             this.comboBoxWaterReflect.Location = new System.Drawing.Point(8, 239);
             this.comboBoxWaterReflect.Name = "comboBoxWaterReflect";
             this.comboBoxWaterReflect.Size = new System.Drawing.Size(169, 21);
@@ -1283,90 +1350,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBarLights)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
-
-        #endregion
-
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button buttonToggleWeapons;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button buttonPapyrus;
-        private System.Windows.Forms.Button buttonClose;
-        private System.Windows.Forms.Button buttonLogsFolder;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button buttonRedateMods;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button buttonActivatedAll;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button buttonRestore;
-        private System.Windows.Forms.ComboBox comboBoxAspect;
-        private System.Windows.Forms.ComboBox comboBoxResolution;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button buttonLow;
-        private System.Windows.Forms.Button buttonMedium;
-        private System.Windows.Forms.Button buttonHight;
-        private System.Windows.Forms.Button buttonUltra;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button buttonAdvancedSettings;
-        private System.Windows.Forms.Button buttonDistance;
-        private System.Windows.Forms.ComboBox comboBoxAdapterIndex;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.Button buttonWindow;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button buttonVsync;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox comboBoxAA;
-        private System.Windows.Forms.ComboBox comboBoxAF;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Button buttonFXAA;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.ComboBox comboBoxShadowMap;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TrackBar trackBarGrass;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.ComboBox comboBoxWaterReflect;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.ComboBox comboBoxTextures;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.ComboBox comboBoxShadowRange;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.ComboBox comboBoxDecals;
-        private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TrackBar trackBarGrassDistance;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TrackBar trackBarObjects;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.TrackBar trackBarItems;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TrackBar trackBarActors;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.TrackBar trackBarLights;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.ComboBox comboBoxLODObjects;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Button buttonHideObjects;
     }
 }

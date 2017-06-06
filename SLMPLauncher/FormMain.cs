@@ -29,39 +29,20 @@ namespace SLMPLauncher
         bool windgetOpen = false;
         int mouseWindowX = 0;
         int mouseWindowY = 0;
-        public static Bitmap BMbuttonlogoGlow;
-        public static Bitmap BMbuttonlogo;
-        public static Bitmap BMbuttonlogoPressed;
-        public static Bitmap BMbuttonWryeBashGlow;
-        public static Bitmap BMbuttonWryeBash;
-        public static Bitmap BMbuttonWryeBashPressed;
-        public static Bitmap BMbuttonDSRGlow;
-        public static Bitmap BMbuttonDSR;
-        public static Bitmap BMbuttonDSRPressed;
-        public static Bitmap BMbuttonFNISGlow;
-        public static Bitmap BMbuttonFNIS;
-        public static Bitmap BMbuttonFNISPressed;
-        public static Bitmap BMbuttonProgramsDirGlow;
-        public static Bitmap BMbuttonProgramsDir;
-        public static Bitmap BMbuttonGameDirGlow;
-        public static Bitmap BMbuttonGameDir;
-        public static Bitmap BMbuttonResetGlow;
-        public static Bitmap BMbuttonReset;
-        public static Bitmap BMbuttonClearGlow;
-        public static Bitmap BMbuttonClear;
-        public static Bitmap BMbuttonAddDirGlow;
-        public static Bitmap BMbuttonAddDir;
-        public static Bitmap BMbuttonAddFileGlow;
-        public static Bitmap BMbuttonAddFile;
-        public static Bitmap BMbuttonModsGlow;
-        public static Bitmap BMbuttonMods;
-        public static Bitmap BMbuttonProgramsGlow;
-        public static Bitmap BMbuttonPrograms;
-        public static Bitmap BMbuttonENBGlow;
-        public static Bitmap BMbuttonENB;
-        public static Bitmap BMbuttonOptionsGlow;
-        public static Bitmap BMbuttonOptions;
-        public static Bitmap BMBackgroundImage;
+        public Bitmap BMbuttonlogoGlow;
+        public Bitmap BMbuttonlogo;
+        public Bitmap BMbuttonlogoPressed;
+        public Bitmap BMbuttonFullGlow;
+        public Bitmap BMbuttonFull;
+        public Bitmap BMbuttonFullPressed;
+        public Bitmap BMbuttonClearGlow;
+        public Bitmap BMbuttonClear;
+        public Bitmap BMbuttonHalfGlow;
+        public Bitmap BMbuttonHalf;
+        public Bitmap BMbuttonHalfPressed;
+        public Bitmap BMbuttonOneGlow;
+        public Bitmap BMbuttonOne;
+        public Bitmap BMBackgroundImage;
         FormWidget settingsWidget = null;
 
         public FormMain()
@@ -115,33 +96,19 @@ namespace SLMPLauncher
                 if (FuncParser.keyExists(iniLauncher, "General", "NumberStyle"))
                 {
                     numberStyle = FuncParser.intRead(iniLauncher, "General", "NumberStyle");
-                    if (numberStyle >= 1 && numberStyle <= 3)
-                    {
-                        if (numberStyle == 1)
-                        {
-                            FuncStyle_1.style_1();
-                        }
-                        else if (numberStyle == 2)
-                        {
-                            FuncStyle_2.style_2();
-                        }
-                    }
-                    else
+                    if (numberStyle < 1 && numberStyle > 2)
                     {
                         numberStyle = 1;
-                        FuncStyle_1.style_1();
                     }
                 }
                 else
                 {
                     numberStyle = 1;
-                    FuncStyle_1.style_1();
                 }
             }
             else
             {
                 numberStyle = 1;
-                FuncStyle_1.style_1();
                 StartPosition = FormStartPosition.CenterScreen;
                 OnProcessExit(this, new EventArgs());
             }
@@ -201,7 +168,7 @@ namespace SLMPLauncher
                 buttonWryeBash.Enabled = false;
                 buttonWryeBash.MouseEnter -= new EventHandler(buttonWryeBash_MouseEnter);
                 buttonWryeBash.MouseLeave -= new EventHandler(buttonWryeBash_MouseLeave);
-                buttonWryeBash.BackgroundImage = BMbuttonWryeBashPressed;
+                buttonWryeBash.BackgroundImage = BMbuttonFullPressed;
                 FuncMisc.RunProcess(wryeBash, null, WryeBashExited, this);
             }
             else
@@ -214,7 +181,7 @@ namespace SLMPLauncher
             buttonWryeBash.Enabled = true;
             buttonWryeBash.MouseEnter += new EventHandler(buttonWryeBash_MouseEnter);
             buttonWryeBash.MouseLeave += new EventHandler(buttonWryeBash_MouseLeave);
-            buttonWryeBash.BackgroundImage = BMbuttonWryeBash;
+            buttonWryeBash.BackgroundImage = BMbuttonFull;
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void buttonDSRStart_Click(object sender, EventArgs e)
@@ -225,7 +192,7 @@ namespace SLMPLauncher
                 buttonDSRStart.Enabled = false;
                 buttonDSRStart.MouseEnter -= new EventHandler(buttonDSRStart_MouseEnter);
                 buttonDSRStart.MouseLeave -= new EventHandler(buttonDSRStart_MouseLeave);
-                buttonDSRStart.BackgroundImage = BMbuttonDSRPressed;
+                buttonDSRStart.BackgroundImage = BMbuttonHalfPressed;
                 FuncMisc.RunProcess(dsr, null, DSRExited, this);
             }
             else
@@ -238,7 +205,7 @@ namespace SLMPLauncher
             buttonDSRStart.Enabled = true;
             buttonDSRStart.MouseEnter += new EventHandler(buttonDSRStart_MouseEnter);
             buttonDSRStart.MouseLeave += new EventHandler(buttonDSRStart_MouseLeave);
-            buttonDSRStart.BackgroundImage = BMbuttonDSR;
+            buttonDSRStart.BackgroundImage = BMbuttonHalf;
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void buttonFNIS_Click(object sender, EventArgs e)
@@ -252,7 +219,7 @@ namespace SLMPLauncher
                 buttonFNISStart.Enabled = false;
                 buttonFNISStart.MouseEnter -= new EventHandler(buttonFNISStart_MouseEnter);
                 buttonFNISStart.MouseLeave -= new EventHandler(buttonFNISStart_MouseLeave);
-                buttonFNISStart.BackgroundImage = BMbuttonFNISPressed;
+                buttonFNISStart.BackgroundImage = BMbuttonHalfPressed;
                 FuncMisc.RunProcess(fnis, null, FNISExited, this);
             }
             else
@@ -265,7 +232,7 @@ namespace SLMPLauncher
             buttonFNISStart.Enabled = true;
             buttonFNISStart.MouseEnter += new EventHandler(buttonFNISStart_MouseEnter);
             buttonFNISStart.MouseLeave += new EventHandler(buttonFNISStart_MouseLeave);
-            buttonFNISStart.BackgroundImage = BMbuttonFNIS;
+            buttonFNISStart.BackgroundImage = BMbuttonHalf;
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void buttonGameDirectory_Click(object sender, EventArgs e)
@@ -574,6 +541,42 @@ namespace SLMPLauncher
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         public void RefreshStyle()
         {
+            if (FormMain.numberStyle == 1)
+            {
+                BMbuttonlogoGlow = Properties.Resources._1_buttonlogoGlow;
+                BMbuttonlogo = Properties.Resources._1_buttonlogo;
+                BMbuttonlogoPressed = Properties.Resources._1_buttonlogoPressed;
+                BMbuttonFullGlow = Properties.Resources._1_buttonFullGlow;
+                BMbuttonFull = Properties.Resources._1_buttonFull;
+                BMbuttonFullPressed = Properties.Resources._1_buttonFullPressed;
+                BMbuttonClearGlow = Properties.Resources._1_buttonClearGlow;
+                BMbuttonClear = Properties.Resources._1_buttonClear;
+                BMbuttonHalfGlow = Properties.Resources._1_buttonHalfGlow;
+                BMbuttonHalf = Properties.Resources._1_buttonHalf;
+                BMbuttonHalfPressed = Properties.Resources._1_buttonHalfPressed;
+                BMbuttonOneGlow = Properties.Resources._1_buttonOneGlow;
+                BMbuttonOne = Properties.Resources._1_buttonOne;
+                BMBackgroundImage = Properties.Resources._1_MainForm;
+                FuncMisc.LabelsTextColor(this, System.Drawing.SystemColors.ControlText, System.Drawing.Color.FromArgb(232, 232, 232));
+            }
+            else
+            {
+                BMbuttonlogoGlow = Properties.Resources._2_buttonlogoGlow;
+                BMbuttonlogo = Properties.Resources._2_buttonlogo;
+                BMbuttonlogoPressed = Properties.Resources._2_buttonlogoPressed;
+                BMbuttonFullGlow = Properties.Resources._2_buttonFullGlow;
+                BMbuttonFull = Properties.Resources._2_buttonFull;
+                BMbuttonFullPressed = Properties.Resources._2_buttonFullPressed;
+                BMbuttonClearGlow = Properties.Resources._2_buttonClearGlow;
+                BMbuttonClear = Properties.Resources._2_buttonClear;
+                BMbuttonHalfGlow = Properties.Resources._2_buttonHalfGlow;
+                BMbuttonHalf = Properties.Resources._2_buttonHalf;
+                BMbuttonHalfPressed = Properties.Resources._2_buttonHalfPressed;
+                BMbuttonOneGlow = Properties.Resources._2_buttonOneGlow;
+                BMbuttonOne = Properties.Resources._2_buttonOne;
+                BMBackgroundImage = Properties.Resources._2_MainForm;
+                FuncMisc.LabelsTextColor(this, System.Drawing.SystemColors.ControlLight, System.Drawing.Color.FromArgb(30, 30, 30));
+            }
             if (buttonSkyrim.Enabled == true)
             {
                 buttonSkyrim.BackgroundImage = BMbuttonlogo;
@@ -584,38 +587,38 @@ namespace SLMPLauncher
             }
             if (buttonWryeBash.Enabled == true)
             {
-                buttonWryeBash.BackgroundImage = BMbuttonWryeBash;
+                buttonWryeBash.BackgroundImage = BMbuttonFull;
             }
             else
             {
-                buttonWryeBash.BackgroundImage = BMbuttonWryeBashPressed;
+                buttonWryeBash.BackgroundImage = BMbuttonFullPressed;
             }
             if (buttonDSRStart.Enabled == true)
             {
-                buttonDSRStart.BackgroundImage = BMbuttonDSR;
+                buttonDSRStart.BackgroundImage = BMbuttonHalf;
             }
             else
             {
-                buttonDSRStart.BackgroundImage = BMbuttonDSRPressed;
+                buttonDSRStart.BackgroundImage = BMbuttonHalfPressed;
             }
             if (buttonFNISStart.Enabled == true)
             {
-                buttonFNISStart.BackgroundImage = BMbuttonFNIS;
+                buttonFNISStart.BackgroundImage = BMbuttonHalf;
             }
             else
             {
-                buttonFNISStart.BackgroundImage = BMbuttonFNISPressed;
+                buttonFNISStart.BackgroundImage = BMbuttonHalfPressed;
             }
-            buttonProgrammsFolder.BackgroundImage = BMbuttonProgramsDir;
-            buttonGameDirectory.BackgroundImage = BMbuttonGameDir;
-            buttonResetSettings.BackgroundImage = BMbuttonReset;
+            buttonProgrammsFolder.BackgroundImage = BMbuttonFull;
+            buttonGameDirectory.BackgroundImage = BMbuttonFull;
+            buttonResetSettings.BackgroundImage = BMbuttonFull;
             buttonClearDirectory.BackgroundImage = BMbuttonClear;
-            buttonAddFolderToIgnore.BackgroundImage = BMbuttonAddDir;
-            buttonAddFileToIgnore.BackgroundImage = BMbuttonAddFile;
-            buttonMods.BackgroundImage = BMbuttonMods;
-            buttonInstRemPrograms.BackgroundImage = BMbuttonPrograms;
-            buttonENBmenu.BackgroundImage = BMbuttonENB;
-            buttonOptions.BackgroundImage = BMbuttonOptions;
+            buttonAddFolderToIgnore.BackgroundImage = BMbuttonOne;
+            buttonAddFileToIgnore.BackgroundImage = BMbuttonOne;
+            buttonMods.BackgroundImage = BMbuttonFull;
+            buttonInstRemPrograms.BackgroundImage = BMbuttonFull;
+            buttonENBmenu.BackgroundImage = BMbuttonFull;
+            buttonOptions.BackgroundImage = BMbuttonFull;
             BackgroundImage = BMBackgroundImage;
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
@@ -630,56 +633,56 @@ namespace SLMPLauncher
 
         private void buttonWryeBash_MouseEnter(object sender, EventArgs e)
         {
-            buttonWryeBash.BackgroundImage = BMbuttonWryeBashGlow;
+            buttonWryeBash.BackgroundImage = BMbuttonFullGlow;
         }
         private void buttonWryeBash_MouseLeave(object sender, EventArgs e)
         {
-            buttonWryeBash.BackgroundImage = BMbuttonWryeBash;
+            buttonWryeBash.BackgroundImage = BMbuttonFull;
         }
 
         private void buttonDSRStart_MouseEnter(object sender, EventArgs e)
         {
-            buttonDSRStart.BackgroundImage = BMbuttonDSRGlow;
+            buttonDSRStart.BackgroundImage = BMbuttonHalfGlow;
         }
         private void buttonDSRStart_MouseLeave(object sender, EventArgs e)
         {
-            buttonDSRStart.BackgroundImage = BMbuttonDSR;
+            buttonDSRStart.BackgroundImage = BMbuttonHalf;
         }
 
         private void buttonFNISStart_MouseEnter(object sender, EventArgs e)
         {
-            buttonFNISStart.BackgroundImage = BMbuttonFNISGlow;
+            buttonFNISStart.BackgroundImage = BMbuttonHalfGlow;
         }
         private void buttonFNISStart_MouseLeave(object sender, EventArgs e)
         {
-            buttonFNISStart.BackgroundImage = BMbuttonFNIS;
+            buttonFNISStart.BackgroundImage = BMbuttonHalf;
         }
 
         private void buttonProgrammsFolder_MouseEnter(object sender, EventArgs e)
         {
-            buttonProgrammsFolder.BackgroundImage = BMbuttonProgramsDirGlow;
+            buttonProgrammsFolder.BackgroundImage = BMbuttonFullGlow;
         }
         private void buttonProgrammsFolder_MouseLeave(object sender, EventArgs e)
         {
-            buttonProgrammsFolder.BackgroundImage = BMbuttonProgramsDir;
+            buttonProgrammsFolder.BackgroundImage = BMbuttonFull;
         }
 
         private void buttonGameDirectory_MouseEnter(object sender, EventArgs e)
         {
-            buttonGameDirectory.BackgroundImage = BMbuttonGameDirGlow;
+            buttonGameDirectory.BackgroundImage = BMbuttonFullGlow;
         }
         private void buttonGameDirectory_MouseLeave(object sender, EventArgs e)
         {
-            buttonGameDirectory.BackgroundImage = BMbuttonGameDir;
+            buttonGameDirectory.BackgroundImage = BMbuttonFull;
         }
 
         private void buttonResetSettings_MouseEnter(object sender, EventArgs e)
         {
-            buttonResetSettings.BackgroundImage = BMbuttonResetGlow;
+            buttonResetSettings.BackgroundImage = BMbuttonFullGlow;
         }
         private void buttonResetSettings_MouseLeave(object sender, EventArgs e)
         {
-            buttonResetSettings.BackgroundImage = BMbuttonReset;
+            buttonResetSettings.BackgroundImage = BMbuttonFull;
         }
 
         private void buttonClearDirectory_MouseEnter(object sender, EventArgs e)
@@ -693,56 +696,56 @@ namespace SLMPLauncher
 
         private void buttonAddFolderToIgnore_MouseEnter(object sender, EventArgs e)
         {
-            buttonAddFolderToIgnore.BackgroundImage = BMbuttonAddDirGlow;
+            buttonAddFolderToIgnore.BackgroundImage = BMbuttonOneGlow;
         }
         private void buttonAddFolderToIgnore_MouseLeave(object sender, EventArgs e)
         {
-            buttonAddFolderToIgnore.BackgroundImage = BMbuttonAddDir;
+            buttonAddFolderToIgnore.BackgroundImage = BMbuttonOne;
         }
 
         private void buttonAddFileToIgnore_MouseEnter(object sender, EventArgs e)
         {
-            buttonAddFileToIgnore.BackgroundImage = BMbuttonAddFileGlow;
+            buttonAddFileToIgnore.BackgroundImage = BMbuttonOneGlow;
         }
         private void buttonAddFileToIgnore_MouseLeave(object sender, EventArgs e)
         {
-            buttonAddFileToIgnore.BackgroundImage = BMbuttonAddFile;
+            buttonAddFileToIgnore.BackgroundImage = BMbuttonOne;
         }
 
         private void buttonMods_MouseEnter(object sender, EventArgs e)
         {
-            buttonMods.BackgroundImage = BMbuttonModsGlow;
+            buttonMods.BackgroundImage = BMbuttonFullGlow;
         }
         private void buttonMods_MouseLeave(object sender, EventArgs e)
         {
-            buttonMods.BackgroundImage = BMbuttonMods;
+            buttonMods.BackgroundImage = BMbuttonFull;
         }
 
         private void buttonInstRemPrograms_MouseEnter(object sender, EventArgs e)
         {
-            buttonInstRemPrograms.BackgroundImage = BMbuttonProgramsGlow;
+            buttonInstRemPrograms.BackgroundImage = BMbuttonFullGlow;
         }
         private void buttonInstRemPrograms_MouseLeave(object sender, EventArgs e)
         {
-            buttonInstRemPrograms.BackgroundImage = BMbuttonPrograms;
+            buttonInstRemPrograms.BackgroundImage = BMbuttonFull;
         }
 
         private void buttonENBmenu_MouseEnter(object sender, EventArgs e)
         {
-            buttonENBmenu.BackgroundImage = BMbuttonENBGlow;
+            buttonENBmenu.BackgroundImage = BMbuttonFullGlow;
         }
         private void buttonENBmenu_MouseLeave(object sender, EventArgs e)
         {
-            buttonENBmenu.BackgroundImage = BMbuttonENB;
+            buttonENBmenu.BackgroundImage = BMbuttonFull;
         }
 
         private void buttonOptions_MouseEnter(object sender, EventArgs e)
         {
-            buttonOptions.BackgroundImage = BMbuttonOptionsGlow;
+            buttonOptions.BackgroundImage = BMbuttonFullGlow;
         }
         private void buttonOptions_MouseLeave(object sender, EventArgs e)
         {
-            buttonOptions.BackgroundImage = BMbuttonOptions;
+            buttonOptions.BackgroundImage = BMbuttonFull;
         }
 
         private void buttonHelp_MouseEnter(object sender, EventArgs e)

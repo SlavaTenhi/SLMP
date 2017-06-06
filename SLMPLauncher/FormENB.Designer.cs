@@ -13,16 +13,43 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button buttonClose;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Button buttonAA;
+        private System.Windows.Forms.Button buttonDOF;
+        private System.Windows.Forms.Button buttonDriver;
+        private System.Windows.Forms.Button buttonFPS;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button buttonAmbientOcclusion;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button buttonWaitBuffer;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button buttonTemporalAA;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button buttonSubPixelAA;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button buttonAF;
+        private System.Windows.Forms.ComboBox comboBox2;
 
         protected override void Dispose(bool disposing)
-		{
-			if (disposing) {
-				if (components != null) {
-					components.Dispose();
-				}
-			}
-			base.Dispose(disposing);
-		}
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 		
 		private void InitializeComponent()
 		{
@@ -623,36 +650,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
 		}
-
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Button buttonClose;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Button buttonAA;
-        private System.Windows.Forms.Button buttonDOF;
-        private System.Windows.Forms.Button buttonDriver;
-        private System.Windows.Forms.Button buttonFPS;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button buttonAmbientOcclusion;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button buttonWaitBuffer;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button buttonTemporalAA;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button buttonSubPixelAA;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button buttonAF;
-        private System.Windows.Forms.ComboBox comboBox2;
     }
 }

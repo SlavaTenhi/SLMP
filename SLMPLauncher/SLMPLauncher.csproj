@@ -126,8 +126,6 @@
     <Compile Include="FormWidget.Designer.cs">
       <DependentUpon>FormWidget.cs</DependentUpon>
     </Compile>
-    <Compile Include="FuncStyle_1.cs" />
-    <Compile Include="FuncStyle_2.cs" />
     <Compile Include="FormUpdates.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,8 +164,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="FormWidget.resx">
       <DependentUpon>FormWidget.cs</DependentUpon>
@@ -179,38 +177,33 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
-    <None Include="Resources\2_buttonWryeBashPressed.png" />
-    <None Include="Resources\2_buttonWryeBashGlow.png" />
-    <None Include="Resources\2_buttonWryeBash.png" />
-    <None Include="Resources\2_buttonResetGlow.png" />
-    <None Include="Resources\2_buttonReset.png" />
-    <None Include="Resources\2_buttonProgramsGlow.png" />
-    <None Include="Resources\2_buttonProgramsDirGlow.png" />
-    <None Include="Resources\2_buttonProgramsDir.png" />
-    <None Include="Resources\2_buttonPrograms.png" />
-    <None Include="Resources\2_buttonOptionsGlow.png" />
-    <None Include="Resources\2_buttonOptions.png" />
-    <None Include="Resources\2_buttonModsGlow.png" />
-    <None Include="Resources\2_buttonMods.png" />
+    <None Include="Resources\1_MainForm.png" />
+    <None Include="Resources\2_buttonFull.png" />
+    <None Include="Resources\2_buttonOneGlow.png" />
+    <None Include="Resources\2_buttonOne.png" />
+    <None Include="Resources\2_buttonHalfPressed.png" />
+    <None Include="Resources\2_buttonHalfGlow.png" />
+    <None Include="Resources\2_buttonHalf.png" />
+    <None Include="Resources\2_buttonFullPressed.png" />
+    <None Include="Resources\2_buttonFullGlow.png" />
+    <None Include="Resources\1_buttonFull.png" />
+    <None Include="Resources\1_buttonClearGlow.png" />
+    <None Include="Resources\1_buttonClear.png" />
+    <None Include="Resources\1_buttonOneGlow.png" />
+    <None Include="Resources\1_buttonOne.png" />
+    <None Include="Resources\1_buttonlogoPressed.png" />
+    <None Include="Resources\1_buttonlogoGlow.png" />
+    <None Include="Resources\1_buttonlogo.png" />
+    <None Include="Resources\1_buttonHalfPressed.png" />
+    <None Include="Resources\1_buttonHalfGlow.png" />
+    <None Include="Resources\1_buttonHalf.png" />
+    <None Include="Resources\1_buttonFullPressed.png" />
+    <None Include="Resources\1_buttonFullGlow.png" />
     <None Include="Resources\2_buttonlogoPressed.png" />
     <None Include="Resources\2_buttonlogoGlow.png" />
     <None Include="Resources\2_buttonlogo.png" />
-    <None Include="Resources\2_buttonGameDirGlow.png" />
-    <None Include="Resources\2_buttonGameDir.png" />
-    <None Include="Resources\2_buttonFNISPressed.png" />
-    <None Include="Resources\2_buttonFNISGlow.png" />
-    <None Include="Resources\2_buttonFNIS.png" />
-    <None Include="Resources\2_buttonENBGlow.png" />
-    <None Include="Resources\2_buttonENB.png" />
-    <None Include="Resources\2_buttonDSRPressed.png" />
-    <None Include="Resources\2_buttonDSRGlow.png" />
-    <None Include="Resources\2_buttonDSR.png" />
     <None Include="Resources\2_buttonClearGlow.png" />
     <None Include="Resources\2_buttonClear.png" />
-    <None Include="Resources\2_buttonAddFileGlow.png" />
-    <None Include="Resources\2_buttonAddFile.png" />
-    <None Include="Resources\2_buttonAddDirGlow.png" />
-    <None Include="Resources\2_buttonAddDir.png" />
     <None Include="Resources\2_MainForm.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

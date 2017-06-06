@@ -6,16 +6,18 @@
 		private System.Windows.Forms.Button buttonUnpackCreationKit;
         private System.Windows.Forms.Button buttonUnpackTESVEdit;
 		private System.Windows.Forms.Button buttonUnpackLodGEN;
-		
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing) {
-				if (components != null) {
-					components.Dispose();
-				}
-			}
-			base.Dispose(disposing);
-		}
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonClose;
+        private System.Windows.Forms.Label label2;
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 		
 		private void InitializeComponent()
 		{
@@ -121,10 +123,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "SLMP: Programs Install";
             this.ResumeLayout(false);
-
         }
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonClose;
-        private System.Windows.Forms.Label label2;
 	}
 }

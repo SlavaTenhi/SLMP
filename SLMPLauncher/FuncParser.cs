@@ -325,54 +325,57 @@ namespace SLMPLauncher
             List<string> outString = new List<string>();
             if (File.Exists(file))
             {
-                char[] charsSymbol = { ' ', '!', '\'', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ';', '<', '=', '>', '?', '@', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '[', '\\', ']', '^', '_', '`', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '{', '|', '}', '~' };
-                byte[] bytesFile = new byte[5000];
-                FileStream fs = File.OpenRead(file);
-                fs.Read(bytesFile, 0, 5000);
-                fs.Close();
-                List<string> processing = new List<string>();
-                processing.Add("");
-                bool wordStart = false;
-                for (int i = 0; i < bytesFile.Count(); i++)
+                if (new FileInfo(file).Length > 50)
                 {
-                    if (processing[processing.Count - 1] == "GRUP" || processing[processing.Count - 1] == "ONAM")
+                    char[] charsSymbol = { ' ', '!', '\'', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ';', '<', '=', '>', '?', '@', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '[', '\\', ']', '^', '_', '`', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '{', '|', '}', '~' };
+                    byte[] bytesFile = new byte[5000];
+                    FileStream fs = File.OpenRead(file);
+                    fs.Read(bytesFile, 0, 5000);
+                    fs.Close();
+                    List<string> processing = new List<string>();
+                    processing.Add("");
+                    bool wordStart = false;
+                    for (int i = 0; i < bytesFile.Count(); i++)
                     {
-                        break;
-                    }
-                    if (bytesFile[i] >= 32 && bytesFile[i] <= 126)
-                    {
-                        if (!wordStart)
+                        if (processing[processing.Count - 1] == "GRUP" || processing[processing.Count - 1] == "ONAM")
                         {
-                            processing.Add(charsSymbol[bytesFile[i] - 32].ToString());
-                            wordStart = true;
+                            break;
+                        }
+                        if (bytesFile[i] >= 32 && bytesFile[i] <= 126)
+                        {
+                            if (!wordStart)
+                            {
+                                processing.Add(charsSymbol[bytesFile[i] - 32].ToString());
+                                wordStart = true;
+                            }
+                            else
+                            {
+                                processing[processing.Count - 1] = processing[processing.Count - 1] + charsSymbol[bytesFile[i] - 32].ToString();
+                            }
                         }
                         else
                         {
-                            processing[processing.Count - 1] = processing[processing.Count - 1] + charsSymbol[bytesFile[i] - 32].ToString();
+                            wordStart = false;
                         }
                     }
-                    else
+                    if (processing[1].Contains("TES4") && (processing[processing.Count - 1] == "GRUP" || processing[processing.Count - 1] == "ONAM"))
                     {
-                        wordStart = false;
-                    }
-                }
-                if (processing[1].Contains("TES4") && (processing[processing.Count - 1] == "GRUP" || processing[processing.Count - 1] == "ONAM"))
-                {
-                    for (int i = 0; i < processing.Count(); i++)
-                    {
-                        if (processing[i].Contains("MAST"))
+                        for (int i = 0; i < processing.Count(); i++)
                         {
-                            if ((i + 1) < processing.Count())
+                            if (processing[i].Contains("MAST"))
                             {
-                                if (processing[i + 1].Contains(".esp") || processing[i + 1].Contains(".esm"))
+                                if ((i + 1) < processing.Count())
                                 {
-                                    outString.Add(processing[i + 1]);
+                                    if (processing[i + 1].Contains(".esp") || processing[i + 1].Contains(".esm"))
+                                    {
+                                        outString.Add(processing[i + 1]);
+                                    }
                                 }
                             }
                         }
                     }
+                    processing.Clear();
                 }
-                processing.Clear();
             }
             return outString;
         }
@@ -380,13 +383,20 @@ namespace SLMPLauncher
         {
             if (File.Exists(file))
             {
-                byte[] bytesFile = new byte[9];
-                FileStream fs = File.OpenRead(file);
-                fs.Read(bytesFile, 0, 9);
-                fs.Close();
-                if (bytesFile[8] == 1 || bytesFile[8] == 129)
+                if (new FileInfo(file).Length > 50)
                 {
-                    return true;
+                    byte[] bytesFile = new byte[9];
+                    FileStream fs = File.OpenRead(file);
+                    fs.Read(bytesFile, 0, 9);
+                    fs.Close();
+                    if (bytesFile[8] == 1 || bytesFile[8] == 129)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
                 else
                 {

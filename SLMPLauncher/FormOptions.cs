@@ -557,14 +557,17 @@ namespace SLMPLauncher
             if (dialogResult == DialogResult.Yes)
             {
                 FuncParser.iniWrite(FormMain.iniSkyrim, "Display", "iAdapter", comboBoxAdapterIndex.SelectedIndex.ToString());
-                FuncParser.iniWrite(FormENB.enbLocal, "MULTIHEAD", "VideoAdapterIndex", comboBoxAdapterIndex.SelectedIndex.ToString());
-                if (comboBoxAdapterIndex.SelectedIndex >= 1 && comboBoxAdapterIndex.SelectedIndex <= 5)
+                if (File.Exists(FormMain.gameFolder + "d3d9.dll"))
                 {
-                    FuncParser.iniWrite(FormENB.enbLocal, "MULTIHEAD", "ForceVideoAdapterIndex", "true");
-                }
-                else
-                {
-                    FuncParser.iniWrite(FormENB.enbLocal, "MULTIHEAD", "ForceVideoAdapterIndex", "false");
+                    FuncParser.iniWrite(FormENB.enbLocal, "MULTIHEAD", "VideoAdapterIndex", comboBoxAdapterIndex.SelectedIndex.ToString());
+                    if (comboBoxAdapterIndex.SelectedIndex >= 1 && comboBoxAdapterIndex.SelectedIndex <= 5)
+                    {
+                        FuncParser.iniWrite(FormENB.enbLocal, "MULTIHEAD", "ForceVideoAdapterIndex", "true");
+                    }
+                    else
+                    {
+                        FuncParser.iniWrite(FormENB.enbLocal, "MULTIHEAD", "ForceVideoAdapterIndex", "false");
+                    }
                 }
             }
             else
@@ -579,21 +582,27 @@ namespace SLMPLauncher
             if (value >= 0 && value <= 5)
             {
                 comboBoxAdapterIndex.SelectedIndex = value;
-                if (value >= 1 && value <= 5)
+                if (File.Exists(FormMain.gameFolder + "d3d9.dll"))
                 {
-                    FuncParser.iniWrite(FormENB.enbLocal, "MULTIHEAD", "ForceVideoAdapterIndex", "true");
-                }
-                else
-                {
-                    FuncParser.iniWrite(FormENB.enbLocal, "MULTIHEAD", "ForceVideoAdapterIndex", "false");
+                    if (value >= 1 && value <= 5)
+                    {
+                        FuncParser.iniWrite(FormENB.enbLocal, "MULTIHEAD", "ForceVideoAdapterIndex", "true");
+                    }
+                    else
+                    {
+                        FuncParser.iniWrite(FormENB.enbLocal, "MULTIHEAD", "ForceVideoAdapterIndex", "false");
+                    }
                 }
             }
             else
             {
                 comboBoxAdapterIndex.SelectedIndex = 0;
                 FuncParser.iniWrite(FormMain.iniSkyrim, "Display", "iAdapter", "0");
-                FuncParser.iniWrite(FormENB.enbLocal, "MULTIHEAD", "VideoAdapterIndex", "0");
-                FuncParser.iniWrite(FormENB.enbLocal, "MULTIHEAD", "ForceVideoAdapterIndex", "false");
+                if (File.Exists(FormMain.gameFolder + "d3d9.dll"))
+                {
+                    FuncParser.iniWrite(FormENB.enbLocal, "MULTIHEAD", "VideoAdapterIndex", "0");
+                    FuncParser.iniWrite(FormENB.enbLocal, "MULTIHEAD", "ForceVideoAdapterIndex", "false");
+                }
             }
             comboBoxAdapterIndex.SelectedIndexChanged += comboBoxAdapterIndex_SelectedIndexChanged;
         }
@@ -635,14 +644,7 @@ namespace SLMPLauncher
         private void refreshWindow()
         {
             window = FuncMisc.RefreshButton(buttonWindow, FormMain.iniSkyrimPrefs, "Display", "bFull Screen", null, true);
-            if (window)
-            {
-                FuncParser.iniWrite(FormENB.enbLocal, "WINDOW", "ForceBorderless", "true");
-            }
-            else
-            {
-                FuncParser.iniWrite(FormENB.enbLocal, "WINDOW", "ForceBorderless", "false");
-            }
+            FuncSettings.ENBCheck(false);
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void buttonVsync_Click(object sender, EventArgs e)

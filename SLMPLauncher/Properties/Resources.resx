@@ -175,17 +175,8 @@
   <data name="buttonHelpGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buttonHelpGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_1_buttonAddDir" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1_buttonAddDir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_1_buttonAddDirGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1_buttonAddDirGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_1_buttonAddFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1_buttonAddFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_1_buttonAddFileGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1_buttonAddFileGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_2_MainForm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2_MainForm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_1_buttonClear" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1_buttonClear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,35 +184,23 @@
   <data name="_1_buttonClearGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1_buttonClearGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_1_buttonDSR" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1_buttonDSR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_1_buttonFull" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1_buttonFull.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_1_buttonDSRGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1_buttonDSRGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_1_buttonFullGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1_buttonFullGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_1_buttonDSRPressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1_buttonDSRPressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_1_buttonFullPressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1_buttonFullPressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_1_buttonENB" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1_buttonENB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_1_buttonHalf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1_buttonHalf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_1_buttonENBGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1_buttonENBGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_1_buttonHalfGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1_buttonHalfGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_1_buttonFNIS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1_buttonFNIS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_1_buttonFNISGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1_buttonFNISGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_1_buttonFNISPressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1_buttonFNISPressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_1_buttonGameDir" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1_buttonGameDir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_1_buttonGameDirGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1_buttonGameDirGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_1_buttonHalfPressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1_buttonHalfPressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_1_buttonlogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1_buttonlogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -232,59 +211,11 @@
   <data name="_1_buttonlogoPressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1_buttonlogoPressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_1_buttonMods" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1_buttonMods.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_1_buttonOne" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1_buttonOne.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_1_buttonModsGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1_buttonModsGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_1_buttonOptions" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1_buttonOptions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_1_buttonOptionsGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1_buttonOptionsGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_1_buttonPrograms" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1_buttonPrograms.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_1_buttonProgramsDir" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1_buttonProgramsDir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_1_buttonProgramsDirGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1_buttonProgramsDirGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_1_buttonProgramsGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1_buttonProgramsGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_1_buttonReset" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1_buttonReset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_1_buttonResetGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1_buttonResetGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_1_buttonWryeBash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1_buttonWryeBash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_1_buttonWryeBashGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1_buttonWryeBashGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_1_buttonWryeBashPressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1_buttonWryeBashPressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_1_MainForm" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1_MainForm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_2_buttonAddDir" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2_buttonAddDir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_2_buttonAddDirGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2_buttonAddDirGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_2_buttonAddFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2_buttonAddFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_2_buttonAddFileGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2_buttonAddFileGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_1_buttonOneGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1_buttonOneGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_2_buttonClear" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2_buttonClear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -292,35 +223,23 @@
   <data name="_2_buttonClearGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2_buttonClearGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_2_buttonDSR" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2_buttonDSR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_2_buttonFull" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2_buttonFull.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_2_buttonDSRGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2_buttonDSRGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_2_buttonFullGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2_buttonFullGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_2_buttonDSRPressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2_buttonDSRPressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_2_buttonFullPressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2_buttonFullPressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_2_buttonENB" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2_buttonENB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_2_buttonHalf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2_buttonHalf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_2_buttonENBGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2_buttonENBGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_2_buttonHalfGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2_buttonHalfGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_2_buttonFNIS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2_buttonFNIS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_2_buttonFNISGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2_buttonFNISGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_2_buttonFNISPressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2_buttonFNISPressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_2_buttonGameDir" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2_buttonGameDir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_2_buttonGameDirGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2_buttonGameDirGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_2_buttonHalfPressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2_buttonHalfPressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_2_buttonlogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2_buttonlogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -331,46 +250,13 @@
   <data name="_2_buttonlogoPressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2_buttonlogoPressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_2_buttonMods" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2_buttonMods.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_2_buttonOne" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2_buttonOne.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_2_buttonModsGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2_buttonModsGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_2_buttonOneGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2_buttonOneGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_2_buttonOptions" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2_buttonOptions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_2_buttonOptionsGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2_buttonOptionsGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_2_buttonPrograms" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2_buttonPrograms.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_2_buttonProgramsDir" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2_buttonProgramsDir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_2_buttonProgramsDirGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2_buttonProgramsDirGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_2_buttonProgramsGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2_buttonProgramsGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_2_buttonReset" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2_buttonReset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_2_buttonResetGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2_buttonResetGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_2_buttonWryeBash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2_buttonWryeBash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_2_buttonWryeBashGlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2_buttonWryeBashGlow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_2_buttonWryeBashPressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2_buttonWryeBashPressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="_2_MainForm" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2_MainForm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_1_MainForm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1_MainForm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -124,6 +124,10 @@ namespace SLMPLauncher
                 {
                     line.ForeColor = color;
                 }
+                if (line is Button)
+                {
+                    line.ForeColor = color;
+                }
                 if (line is TrackBar)
                 {
                     line.BackColor = trackbar;
