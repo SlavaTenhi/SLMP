@@ -15,7 +15,14 @@ namespace SLMPLauncher
                 }
                 catch
                 {
-                    MessageBox.Show("Не удалось удалить файл: " + path);
+                    if (FormMain.langTranslate != "RU")
+                    {
+                        MessageBox.Show("Could not delete file: " + path);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Не удалось удалить файл: " + path);
+                    }
                 }
             }
             else if (Directory.Exists(path))
@@ -26,7 +33,14 @@ namespace SLMPLauncher
                 }
                 catch
                 {
-                    MessageBox.Show("Не удалось удалить папку: " + path);
+                    if (FormMain.langTranslate != "RU")
+                    {
+                        MessageBox.Show("Could not delete folder: " + path);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Не удалось удалить папку: " + path);
+                    }
                 }
             }
         }
@@ -44,12 +58,26 @@ namespace SLMPLauncher
                     }
                     catch
                     {
-                        MessageBox.Show("Не удалось переместить: " + from);
+                        if (FormMain.langTranslate != "RU")
+                        {
+                            MessageBox.Show("Failed to move: " + from);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Не удалось переместить: " + from);
+                        }
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Файл уже существует: " + to);
+                    if (FormMain.langTranslate != "RU")
+                    {
+                        MessageBox.Show("File already exists: " + to);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Файл уже существует: " + to);
+                    }
                 }
             }
         }
@@ -64,7 +92,14 @@ namespace SLMPLauncher
                 }
                 catch
                 {
-                    MessageBox.Show("Не удалось скопировать: " + from);
+                    if (FormMain.langTranslate != "RU")
+                    {
+                        MessageBox.Show("Could not copy: " + from);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Не удалось скопировать: " + from);
+                    }
                 }
             }
         }
@@ -79,7 +114,14 @@ namespace SLMPLauncher
                 }
                 catch
                 {
-                    MessageBox.Show("Не удалось создать папку: " + dir);
+                    if (FormMain.langTranslate != "RU")
+                    {
+                        MessageBox.Show("Could not create folder: " + dir);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Не удалось создать папку: " + dir);
+                    }
                 }
             }
         }

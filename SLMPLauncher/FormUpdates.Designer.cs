@@ -110,7 +110,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(102, 18);
             this.label4.TabIndex = 30;
-            this.label4.Text = "Не проверено.";
+            this.label4.Text = "не проверено";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label3
@@ -198,6 +198,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "SLMP: Updates";
             this.ResumeLayout(false);
+
         }
     }
 }

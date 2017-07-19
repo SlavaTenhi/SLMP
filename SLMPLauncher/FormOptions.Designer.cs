@@ -52,7 +52,6 @@
         private System.Windows.Forms.TrackBar trackBarGrass;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.ComboBox comboBoxWaterReflect;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label24;
@@ -83,6 +82,16 @@
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Button buttonHideObjects;
+        private System.Windows.Forms.CheckBox checkBoxReflectSky;
+        private System.Windows.Forms.CheckBox checkBoxReflectLand;
+        private System.Windows.Forms.CheckBox checkBoxReflectObjects;
+        private System.Windows.Forms.CheckBox checkBoxReflectTrees;
+        private System.Windows.Forms.Button buttonShowWaterReflect;
+        private System.Windows.Forms.Label labelRSky;
+        private System.Windows.Forms.Label labelRLand;
+        private System.Windows.Forms.Label labelRObjects;
+        private System.Windows.Forms.Label labelRTrees;
+        private System.Windows.Forms.Label label36;
 
         protected override void Dispose(bool disposing)
         {
@@ -145,7 +154,6 @@
             this.trackBarGrass = new System.Windows.Forms.TrackBar();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.comboBoxWaterReflect = new System.Windows.Forms.ComboBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label24 = new System.Windows.Forms.Label();
@@ -176,6 +184,16 @@
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.buttonHideObjects = new System.Windows.Forms.Button();
+            this.checkBoxReflectSky = new System.Windows.Forms.CheckBox();
+            this.checkBoxReflectLand = new System.Windows.Forms.CheckBox();
+            this.checkBoxReflectObjects = new System.Windows.Forms.CheckBox();
+            this.checkBoxReflectTrees = new System.Windows.Forms.CheckBox();
+            this.buttonShowWaterReflect = new System.Windows.Forms.Button();
+            this.labelRSky = new System.Windows.Forms.Label();
+            this.labelRLand = new System.Windows.Forms.Label();
+            this.labelRObjects = new System.Windows.Forms.Label();
+            this.labelRTrees = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -831,23 +849,6 @@
             this.label23.Text = "Отражения на воде";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // comboBoxWaterReflect
-            // 
-            this.comboBoxWaterReflect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxWaterReflect.FormattingEnabled = true;
-            this.comboBoxWaterReflect.Items.AddRange(new object[] {
-            "Ничего",
-            "+ Небо",
-            "+ Земля",
-            "+ ЛОДы объектов",
-            "+ ЛОДы деревьев"});
-            this.comboBoxWaterReflect.Location = new System.Drawing.Point(8, 239);
-            this.comboBoxWaterReflect.Name = "comboBoxWaterReflect";
-            this.comboBoxWaterReflect.Size = new System.Drawing.Size(169, 21);
-            this.comboBoxWaterReflect.TabIndex = 0;
-            this.comboBoxWaterReflect.TabStop = false;
-            this.comboBoxWaterReflect.SelectedIndexChanged += new System.EventHandler(this.comboBoxWaterReflect_SelectedIndexChanged);
-            // 
             // pictureBox8
             // 
             this.pictureBox8.BackgroundImage = global::SLMPLauncher.Properties.Resources.line;
@@ -1241,6 +1242,130 @@
             this.buttonHideObjects.Visible = false;
             this.buttonHideObjects.Click += new System.EventHandler(this.buttonHideObjects_Click);
             // 
+            // checkBoxReflectSky
+            // 
+            this.checkBoxReflectSky.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.checkBoxReflectSky.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkBoxReflectSky.Location = new System.Drawing.Point(10, 263);
+            this.checkBoxReflectSky.Name = "checkBoxReflectSky";
+            this.checkBoxReflectSky.Size = new System.Drawing.Size(167, 17);
+            this.checkBoxReflectSky.TabIndex = 0;
+            this.checkBoxReflectSky.Text = "Небо";
+            this.checkBoxReflectSky.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxReflectSky.UseVisualStyleBackColor = false;
+            this.checkBoxReflectSky.Visible = false;
+            this.checkBoxReflectSky.CheckedChanged += new System.EventHandler(this.checkBoxReflectSky_CheckedChanged);
+            // 
+            // checkBoxReflectLand
+            // 
+            this.checkBoxReflectLand.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.checkBoxReflectLand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkBoxReflectLand.Location = new System.Drawing.Point(10, 280);
+            this.checkBoxReflectLand.Name = "checkBoxReflectLand";
+            this.checkBoxReflectLand.Size = new System.Drawing.Size(167, 17);
+            this.checkBoxReflectLand.TabIndex = 0;
+            this.checkBoxReflectLand.Text = "Ландшафт";
+            this.checkBoxReflectLand.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxReflectLand.UseVisualStyleBackColor = false;
+            this.checkBoxReflectLand.Visible = false;
+            this.checkBoxReflectLand.CheckedChanged += new System.EventHandler(this.checkBoxReflectLand_CheckedChanged);
+            // 
+            // checkBoxReflectObjects
+            // 
+            this.checkBoxReflectObjects.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.checkBoxReflectObjects.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkBoxReflectObjects.Location = new System.Drawing.Point(10, 297);
+            this.checkBoxReflectObjects.Name = "checkBoxReflectObjects";
+            this.checkBoxReflectObjects.Size = new System.Drawing.Size(167, 17);
+            this.checkBoxReflectObjects.TabIndex = 0;
+            this.checkBoxReflectObjects.Text = "Объекты";
+            this.checkBoxReflectObjects.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxReflectObjects.UseVisualStyleBackColor = false;
+            this.checkBoxReflectObjects.Visible = false;
+            this.checkBoxReflectObjects.CheckedChanged += new System.EventHandler(this.checkBoxReflectObjects_CheckedChanged);
+            // 
+            // checkBoxReflectTrees
+            // 
+            this.checkBoxReflectTrees.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.checkBoxReflectTrees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkBoxReflectTrees.Location = new System.Drawing.Point(10, 314);
+            this.checkBoxReflectTrees.Name = "checkBoxReflectTrees";
+            this.checkBoxReflectTrees.Size = new System.Drawing.Size(167, 17);
+            this.checkBoxReflectTrees.TabIndex = 0;
+            this.checkBoxReflectTrees.Text = "Деревья";
+            this.checkBoxReflectTrees.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBoxReflectTrees.UseVisualStyleBackColor = false;
+            this.checkBoxReflectTrees.Visible = false;
+            this.checkBoxReflectTrees.CheckedChanged += new System.EventHandler(this.checkBoxReflectTrees_CheckedChanged);
+            // 
+            // buttonShowWaterReflect
+            // 
+            this.buttonShowWaterReflect.Location = new System.Drawing.Point(129, 238);
+            this.buttonShowWaterReflect.Name = "buttonShowWaterReflect";
+            this.buttonShowWaterReflect.Size = new System.Drawing.Size(49, 23);
+            this.buttonShowWaterReflect.TabIndex = 0;
+            this.buttonShowWaterReflect.TabStop = false;
+            this.buttonShowWaterReflect.UseVisualStyleBackColor = true;
+            this.buttonShowWaterReflect.Click += new System.EventHandler(this.buttonShowWaterReflect_Click);
+            // 
+            // labelRSky
+            // 
+            this.labelRSky.BackColor = System.Drawing.Color.Transparent;
+            this.labelRSky.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelRSky.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labelRSky.Location = new System.Drawing.Point(8, 237);
+            this.labelRSky.Name = "labelRSky";
+            this.labelRSky.Size = new System.Drawing.Size(24, 21);
+            this.labelRSky.TabIndex = 0;
+            this.labelRSky.Text = "0";
+            this.labelRSky.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelRLand
+            // 
+            this.labelRLand.BackColor = System.Drawing.Color.Transparent;
+            this.labelRLand.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelRLand.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labelRLand.Location = new System.Drawing.Point(38, 237);
+            this.labelRLand.Name = "labelRLand";
+            this.labelRLand.Size = new System.Drawing.Size(24, 21);
+            this.labelRLand.TabIndex = 0;
+            this.labelRLand.Text = "0";
+            this.labelRLand.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelRObjects
+            // 
+            this.labelRObjects.BackColor = System.Drawing.Color.Transparent;
+            this.labelRObjects.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelRObjects.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labelRObjects.Location = new System.Drawing.Point(68, 237);
+            this.labelRObjects.Name = "labelRObjects";
+            this.labelRObjects.Size = new System.Drawing.Size(24, 21);
+            this.labelRObjects.TabIndex = 0;
+            this.labelRObjects.Text = "0";
+            this.labelRObjects.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelRTrees
+            // 
+            this.labelRTrees.BackColor = System.Drawing.Color.Transparent;
+            this.labelRTrees.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelRTrees.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labelRTrees.Location = new System.Drawing.Point(98, 237);
+            this.labelRTrees.Name = "labelRTrees";
+            this.labelRTrees.Size = new System.Drawing.Size(24, 21);
+            this.labelRTrees.TabIndex = 0;
+            this.labelRTrees.Text = "0";
+            this.labelRTrees.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label36
+            // 
+            this.label36.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label36.Location = new System.Drawing.Point(6, 261);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(173, 72);
+            this.label36.TabIndex = 27;
+            this.label36.Visible = false;
+            // 
             // FormOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1292,6 +1417,11 @@
             this.Controls.Add(this.buttonDistance);
             this.Controls.Add(this.buttonAdvancedSettings);
             this.Controls.Add(this.buttonLow);
+            this.Controls.Add(this.checkBoxReflectTrees);
+            this.Controls.Add(this.checkBoxReflectObjects);
+            this.Controls.Add(this.checkBoxReflectLand);
+            this.Controls.Add(this.checkBoxReflectSky);
+            this.Controls.Add(this.label36);
             this.Controls.Add(this.buttonLogsFolder);
             this.Controls.Add(this.buttonPapyrus);
             this.Controls.Add(this.label5);
@@ -1304,7 +1434,6 @@
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.comboBoxTextures);
-            this.Controls.Add(this.comboBoxWaterReflect);
             this.Controls.Add(this.comboBoxDecals);
             this.Controls.Add(this.comboBoxShadowRange);
             this.Controls.Add(this.comboBoxShadowMap);
@@ -1322,6 +1451,11 @@
             this.Controls.Add(this.comboBoxResolution);
             this.Controls.Add(this.comboBoxAspect);
             this.Controls.Add(this.trackBarGrass);
+            this.Controls.Add(this.buttonShowWaterReflect);
+            this.Controls.Add(this.labelRTrees);
+            this.Controls.Add(this.labelRObjects);
+            this.Controls.Add(this.labelRLand);
+            this.Controls.Add(this.labelRSky);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label6);
@@ -1350,6 +1484,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBarLights)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
     }
 }

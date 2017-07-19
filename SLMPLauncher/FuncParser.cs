@@ -142,7 +142,14 @@ namespace SLMPLauncher
             }
             catch
             {
-                MessageBox.Show("Не удалось записать файл: " + path);
+                if (FormMain.langTranslate != "RU")
+                {
+                    MessageBox.Show("Could not write file: " + path);
+                }
+                else
+                {
+                    MessageBox.Show("Не удалось записать файл: " + path);
+                }
             }
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
@@ -152,7 +159,7 @@ namespace SLMPLauncher
             blockClearSR = true;
             string line = stringRead(path, section, key);
             blockClearSR = false;
-            if (line != null)
+            if (lineIndex != -1)
             {
                 if (line != value)
                 {
@@ -277,28 +284,17 @@ namespace SLMPLauncher
             return value;
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
-        public static string convertFileSize(int input)
+        public static string convertFileSize(double input)
         {
-            if (input > 1073741824)
+            String[] units = new String[] { "B", "KB", "MB", "GB", "TB", "PB" };
+            double mod = 1024.0;
+            int i = 0;
+            while (input >= mod)
             {
-                return (input / 1024 / 1024 / 1024).ToString() + " GB";
+                input /= mod;
+                i++;
             }
-            else if (input > 1048576 && input < 1073741824)
-            {
-                return (input / 1024 / 1024).ToString() + " MB";
-            }
-            else if (input > 1024 && input < 1048576)
-            {
-                return (input / 1024).ToString() + " KB";
-            }
-            else if (input >= 0)
-            {
-                return input.ToString() + " B";
-            }
-            else
-            {
-                return "Ошибка";
-            }
+            return Math.Round(input, 2) + units[i];
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         public static bool listsCompare(List<string> list1, List<string> list2)

@@ -20,11 +20,20 @@ namespace SLMPLauncher
         public static string iniIgnoreFiles = launcherFolder + "SLMPIgnoreFiles.ini";
         public static string startWithGame = null;
         public static string waitBeforeStart = null;
-        public static int numberStyle = 0;
+        public static string langTranslate = "RU";
+        public static int numberStyle = 1;
         string helpPath = gameFolder + @"_Programs\ProgramFiles\SLMP-GR Help.chm";
         string wryeBash = gameFolder + @"_Programs\ProgramFiles\Mopy\Wrye Bash.exe";
         string dsr = gameFolder + @"Data\SkyProc Patchers\Dual Sheath Redux Patch\Dual Sheath Redux Patch.jar";
         string fnis = gameFolder + @"Data\Tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe";
+        string notFound = " не найден(а).";
+        string confirmTitle = "Подтверждение";
+        string settingsReset = "Сбросить настройки?";
+        string notFoundTemplates = "Нет шаблонов конфигурационных файлов для сброса настроек.";
+        string clearDirectory = "Очистить директорию?";
+        string notInDirectory = "Выбран(ы) объект(ы) вне директории игры.";
+        string noIniFound = "Файлы настроек Skyrim не сформированы. Сделайте сброс настроек.";
+        string failWriteToRegistry = "Не удалось записать путь в реест.";
         bool moveWindow = false;
         bool windgetOpen = false;
         int mouseWindowX = 0;
@@ -48,6 +57,7 @@ namespace SLMPLauncher
         public FormMain()
         {
             InitializeComponent();
+            Directory.SetCurrentDirectory(FormMain.launcherFolder);
             if (File.Exists(iniLauncher))
             {
                 if (FuncParser.keyExists(iniLauncher, "Position", "POS_WindowTop") && FuncParser.keyExists(iniLauncher, "Position", "POS_WindowLeft"))
@@ -79,36 +89,32 @@ namespace SLMPLauncher
                 {
                     StartPosition = FormStartPosition.CenterScreen;
                 }
-                if (FuncParser.keyExists(iniLauncher, "General", "Version_CP"))
+                if (FuncParser.keyExists(iniLauncher, "General", "Language"))
                 {
-                    var version1 = new Version(FileVersionInfo.GetVersionInfo(Process.GetCurrentProcess().MainModule.FileName).ProductVersion);
-                    var version2 = new Version(FuncParser.stringRead(iniLauncher, "General", "Version_CP"));
-                    var result = version1.CompareTo(version2);
-                    if (result != 0)
+                    if (FuncParser.stringRead(iniLauncher, "General", "Language") == "RU")
                     {
-                        FuncParser.iniWrite(iniLauncher, "General", "Version_CP", version1.ToString());
+                        SetLangTranslateRU(true);
+                    }
+                    else
+                    {
+                        langTranslate = "EN";
+                        SetLangTranslateEN();
                     }
                 }
-                else
+                string version = FuncParser.stringRead(iniLauncher, "General", "Version_CP");
+                if (FileVersionInfo.GetVersionInfo(Process.GetCurrentProcess().MainModule.FileName).ProductVersion != version)
                 {
-                    FuncParser.iniWrite(iniLauncher, "General", "Version_CP", FileVersionInfo.GetVersionInfo(launcherFolder + "SLMPLauncher.exe").ProductVersion);
+                    FuncParser.iniWrite(iniLauncher, "General", "Version_CP", FileVersionInfo.GetVersionInfo(Process.GetCurrentProcess().MainModule.FileName).ProductVersion);
                 }
-                if (FuncParser.keyExists(iniLauncher, "General", "NumberStyle"))
-                {
-                    numberStyle = FuncParser.intRead(iniLauncher, "General", "NumberStyle");
-                    if (numberStyle < 1 && numberStyle > 2)
-                    {
-                        numberStyle = 1;
-                    }
-                }
-                else
+                numberStyle = FuncParser.intRead(iniLauncher, "General", "NumberStyle");
+                if (numberStyle < 1 && numberStyle > 2)
                 {
                     numberStyle = 1;
                 }
             }
             else
             {
-                numberStyle = 1;
+                SetLangTranslateRU(true);
                 StartPosition = FormStartPosition.CenterScreen;
                 OnProcessExit(this, new EventArgs());
             }
@@ -116,20 +122,6 @@ namespace SLMPLauncher
             {
                 resetSettings();
             }
-            toolTip1.SetToolTip(buttonMods, "Установка опциональных модов.");
-            toolTip1.SetToolTip(buttonWryeBash, "Сортировщик модов. Моды имеющие конфликты будут красными.");
-            toolTip1.SetToolTip(buttonDSRStart, "Патчер Dual Sheath Redux. Применять после изменения в модах.");
-            toolTip1.SetToolTip(buttonFNISStart, "Патчер FNIS. Применять после изменения модов содержащих анимации.");
-            toolTip1.SetToolTip(buttonGameDirectory, "Открывает папку-директорию игры.");
-            toolTip1.SetToolTip(buttonResetSettings, "Полный сброс настроек игры и восстановление последовательности модов.");
-            toolTip1.SetToolTip(buttonClearDirectory, "Удаляет \"чужие\" файлы. В т.ч. распакованные программы.");
-            toolTip1.SetToolTip(buttonInstRemPrograms, "Распаковка различных программ для редактирования игры.");
-            toolTip1.SetToolTip(buttonENBmenu, "Меню управления ENB с выбором различных пресетов.");
-            toolTip1.SetToolTip(buttonProgrammsFolder, "Открывает папку с ярлыками программ для редактирования игры.");
-            toolTip1.SetToolTip(buttonSkyrim, "Запустить игру.");
-            toolTip1.SetToolTip(buttonAddFolderToIgnore, "Добавление папки в шаблон игнор-листа.");
-            toolTip1.SetToolTip(buttonAddFileToIgnore, "Добавление файла(ов) в шаблон игнор-листа.");
-            toolTip1.SetToolTip(buttonOptions, "Настройка конфигурации, параметров игры, управление подключаемыми файлами.");
             AppDomain.CurrentDomain.ProcessExit += new EventHandler(OnProcessExit);
             RefreshStyle();
         }
@@ -143,6 +135,7 @@ namespace SLMPLauncher
                 sw.WriteLine("Version_CP=" + FileVersionInfo.GetVersionInfo(Process.GetCurrentProcess().MainModule.FileName).ProductVersion);
                 sw.WriteLine("HideWebButtons=false");
                 sw.WriteLine("NumberStyle=" + numberStyle);
+                sw.WriteLine("Language=" + langTranslate);
                 sw.WriteLine("");
                 sw.WriteLine("[Position]");
                 sw.WriteLine("POS_WindowTop=" + Top);
@@ -154,6 +147,7 @@ namespace SLMPLauncher
             else
             {
                 FuncParser.iniWrite(iniLauncher, "General", "NumberStyle", numberStyle.ToString());
+                FuncParser.iniWrite(iniLauncher, "General", "Language", langTranslate);
                 FuncParser.iniWrite(iniLauncher, "Position", "POS_WindowTop", Top.ToString());
                 FuncParser.iniWrite(iniLauncher, "Position", "POS_WindowLeft", Left.ToString());
             }
@@ -173,7 +167,7 @@ namespace SLMPLauncher
             }
             else
             {
-                MessageBox.Show("Wrye Bash не найден.");
+                MessageBox.Show("Wrye Bash" + notFound);
             }
         }
         private void WryeBashExited(object sender, EventArgs e)
@@ -197,7 +191,7 @@ namespace SLMPLauncher
             }
             else
             {
-                MessageBox.Show("Dual Sheath Redux патчер не найден.");
+                MessageBox.Show("Dual Sheath Redux" + notFound);
             }
         }
         private void DSRExited(object sender, EventArgs e)
@@ -224,7 +218,7 @@ namespace SLMPLauncher
             }
             else
             {
-                MessageBox.Show("FNIS патчер не найден.");
+                MessageBox.Show("FNIS" + notFound);
             }
         }
         private void FNISExited(object sender, EventArgs e)
@@ -253,14 +247,14 @@ namespace SLMPLauncher
             }
             else
             {
-                MessageBox.Show("Не найдена папка программ для редактирования.");
+                MessageBox.Show("_Programs" + notFound);
             }
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void buttonResetSettings_Click(object sender, EventArgs e)
         {
             label1.Focus();
-            DialogResult dialogResult = MessageBox.Show("Сбросить настройки?", "Подтверждение", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show(settingsReset, confirmTitle, MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 resetSettings();
@@ -279,7 +273,7 @@ namespace SLMPLauncher
                 }
                 catch
                 {
-                    MessageBox.Show("Не удалось записать путь в реест.");
+                    MessageBox.Show(failWriteToRegistry);
                 }
                 FuncFiles.Delete(myDocPath + "Skyrim.ini");
                 FuncFiles.Delete(myDocPath + "SkyrimPrefs.ini");
@@ -308,14 +302,14 @@ namespace SLMPLauncher
             }
             else
             {
-                MessageBox.Show("Нет шаблонов конфигурационных файлов для сброса настроек.");
+                MessageBox.Show(notFoundTemplates);
             }
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void buttonClearDirectory_Click(object sender, EventArgs e)
         {
             label1.Focus();
-            DialogResult dialogResult = MessageBox.Show("Очистить директорию?", "Подтверждение", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show(clearDirectory, confirmTitle, MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 FuncFiles.Delete(gameFolder + @"..\Skyrim Mods");
@@ -340,7 +334,7 @@ namespace SLMPLauncher
                 }
                 else
                 {
-                    MessageBox.Show("Выбран(ы) файл(ы) вне директории игры.");
+                    MessageBox.Show(notInDirectory);
                 }
             }
         }
@@ -358,7 +352,7 @@ namespace SLMPLauncher
                 }
                 else
                 {
-                    MessageBox.Show("Выбрана папка вне директории игры.");
+                    MessageBox.Show(notInDirectory);
                 }
             }
         }
@@ -366,7 +360,7 @@ namespace SLMPLauncher
         private void buttonInstRemPrograms_Click(object sender, EventArgs e)
         {
             label1.Focus();
-            if (Directory.Exists(gameFolder + "_Programs"))
+            if (Directory.Exists(gameFolder + @"_Programs\ProgramFiles"))
             {
                 var form = new FormPrograms();
                 form.ShowDialog();
@@ -374,7 +368,7 @@ namespace SLMPLauncher
             }
             else
             {
-                MessageBox.Show("Не найдена папка программ для редактирования.");
+                MessageBox.Show(@"_Programs\ProgramFiles" + notFound);
             }
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
@@ -417,7 +411,7 @@ namespace SLMPLauncher
             }
             else
             {
-                MessageBox.Show("Не найден TESV.exe.");
+                MessageBox.Show("TESV.exe" + notFound);
             }
         }
         private void SKSEExited(object sender, EventArgs e)
@@ -461,7 +455,7 @@ namespace SLMPLauncher
             }
             else
             {
-                MessageBox.Show("Файлы настроек Skyrim не сформированы. Сделайте сброс настроек.");
+                MessageBox.Show(noIniFound);
             }
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
@@ -474,7 +468,7 @@ namespace SLMPLauncher
             }
             else
             {
-                MessageBox.Show("Нет файла справки.");
+                MessageBox.Show("SLMP-GR Help.chm" + notFound);
             }
         }
         private void buttonWidget_Click(object sender, EventArgs e)
@@ -539,6 +533,76 @@ namespace SLMPLauncher
             }
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
+        public void SetLangTranslateRU(bool fromStart)
+        {
+            if (!fromStart)
+            {
+                buttonResetSettings.Text = "Сброс Настроек";
+                buttonClearDirectory.Text = "Очистка";
+                buttonOptions.Text = "Настройки Игры";
+                buttonInstRemPrograms.Text = "Программы";
+                buttonProgrammsFolder.Text = "Все Программы";
+                buttonMods.Text = "Моды";
+                buttonGameDirectory.Text = "Директория Игры";
+                buttonENBmenu.Text = "ENB Меню";
+                notFound = " не найден(а).";
+                confirmTitle = "Подтверждение";
+                settingsReset = "Сбросить настройки?";
+                notFoundTemplates = "Нет шаблонов конфигурационных файлов для сброса настроек.";
+                clearDirectory = "Очистить директорию?";
+                notInDirectory = "Выбран(ы) объект(ы) вне директории игры.";
+                noIniFound = "Файлы настроек Skyrim не сформированы. Сделайте сброс настроек.";
+                failWriteToRegistry = "Не удалось записать путь в реест.";
+            }
+            toolTip1.SetToolTip(buttonMods, "Установка опциональных модов.");
+            toolTip1.SetToolTip(buttonWryeBash, "Сортировщик модов. Моды имеющие конфликты будут красными.");
+            toolTip1.SetToolTip(buttonDSRStart, "Патчер Dual Sheath Redux. Применять после изменения модов содержащих оружие.");
+            toolTip1.SetToolTip(buttonFNISStart, "Патчер FNIS. Применять после изменения модов содержащих анимации.");
+            toolTip1.SetToolTip(buttonGameDirectory, "Открывает папку-директорию игры.");
+            toolTip1.SetToolTip(buttonResetSettings, "Полный сброс настроек игры и восстановление последовательности модов.");
+            toolTip1.SetToolTip(buttonClearDirectory, "Удаляет \"чужие\" файлы. В т.ч. распакованные программы.");
+            toolTip1.SetToolTip(buttonInstRemPrograms, "Распаковка различных программ для редактирования игры.");
+            toolTip1.SetToolTip(buttonENBmenu, "Меню управления ENB с выбором различных пресетов.");
+            toolTip1.SetToolTip(buttonProgrammsFolder, "Открывает папку с ярлыками программ для редактирования игры.");
+            toolTip1.SetToolTip(buttonSkyrim, "Запустить игру.");
+            toolTip1.SetToolTip(buttonAddFolderToIgnore, "Добавление папки в шаблон игнор листа.");
+            toolTip1.SetToolTip(buttonAddFileToIgnore, "Добавление файла(ов) в шаблон игнор листа.");
+            toolTip1.SetToolTip(buttonOptions, "Настройка конфигурации, параметров игры, управление подключаемыми файлами.");
+        }
+        public void SetLangTranslateEN()
+        {
+            buttonResetSettings.Text = "Reset Settings";
+            buttonClearDirectory.Text = "Clear";
+            buttonOptions.Text = "Game Settings";
+            buttonInstRemPrograms.Text = "Programs";
+            buttonProgrammsFolder.Text = "All Programs";
+            buttonMods.Text = "Mods";
+            buttonGameDirectory.Text = "Game Directory";
+            buttonENBmenu.Text = "ENB Menu";
+            notFound = " not found.";
+            confirmTitle = "Confirm";
+            settingsReset = "Reset settings?";
+            notFoundTemplates = "No configuration file templates for resetting settings.";
+            clearDirectory = "Clear directory?";
+            notInDirectory = "Selected object(s) outside the game directory.";
+            noIniFound = "Skyrim configuration files are not generated. Reset the settings.";
+            failWriteToRegistry = "Could not write path to the registry.";
+            toolTip1.SetToolTip(buttonMods, "Installing optional mods.");
+            toolTip1.SetToolTip(buttonWryeBash, "Mods sorter. Mods having conflicts will be red.");
+            toolTip1.SetToolTip(buttonDSRStart, "Patcher Dual Sheath Redux. Apply after the change in the mods containing the weapons.");
+            toolTip1.SetToolTip(buttonFNISStart, "Patcher FNIS. Apply after the change in the mods containing the animation.");
+            toolTip1.SetToolTip(buttonGameDirectory, "Opens folder-directory of the game.");
+            toolTip1.SetToolTip(buttonResetSettings, "Full reset of game settings and recovery of a sequence of mods.");
+            toolTip1.SetToolTip(buttonClearDirectory, "Delete \"strangers\" files. Including unpacked programs.");
+            toolTip1.SetToolTip(buttonInstRemPrograms, "Unpacking various programs for editing games.");
+            toolTip1.SetToolTip(buttonENBmenu, "The ENB control menu with a selection of different presets.");
+            toolTip1.SetToolTip(buttonProgrammsFolder, "Opens a folder with shortcuts for editing games.");
+            toolTip1.SetToolTip(buttonSkyrim, "Start the game.");
+            toolTip1.SetToolTip(buttonAddFolderToIgnore, "Adding a folder to the ignore list template.");
+            toolTip1.SetToolTip(buttonAddFileToIgnore, "Adding a file(s) to the ignore list template.");
+            toolTip1.SetToolTip(buttonOptions, "Configuring the configuration, game settings, managing the connected files.");
+        }
+        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         public void RefreshStyle()
         {
             if (FormMain.numberStyle == 1)
@@ -557,7 +621,7 @@ namespace SLMPLauncher
                 BMbuttonOneGlow = Properties.Resources._1_buttonOneGlow;
                 BMbuttonOne = Properties.Resources._1_buttonOne;
                 BMBackgroundImage = Properties.Resources._1_MainForm;
-                FuncMisc.LabelsTextColor(this, System.Drawing.SystemColors.ControlText, System.Drawing.Color.FromArgb(232, 232, 232));
+                FuncMisc.LabelsTextColor(this, System.Drawing.SystemColors.ControlText, System.Drawing.Color.FromArgb(232, 232, 232), true);
             }
             else
             {
@@ -575,7 +639,7 @@ namespace SLMPLauncher
                 BMbuttonOneGlow = Properties.Resources._2_buttonOneGlow;
                 BMbuttonOne = Properties.Resources._2_buttonOne;
                 BMBackgroundImage = Properties.Resources._2_MainForm;
-                FuncMisc.LabelsTextColor(this, System.Drawing.SystemColors.ControlLight, System.Drawing.Color.FromArgb(30, 30, 30));
+                FuncMisc.LabelsTextColor(this, System.Drawing.SystemColors.ControlLight, System.Drawing.Color.FromArgb(30, 30, 30), true);
             }
             if (buttonSkyrim.Enabled == true)
             {

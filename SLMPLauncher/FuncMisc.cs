@@ -116,7 +116,7 @@ namespace SLMPLauncher
             }
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
-        public static void LabelsTextColor(Form form, Color color, Color trackbar)
+        public static void LabelsTextColor(Form form, Color color, Color trackbar, bool button)
         {
             foreach (Control line in form.Controls)
             {
@@ -124,7 +124,7 @@ namespace SLMPLauncher
                 {
                     line.ForeColor = color;
                 }
-                if (line is Button)
+                if (line is Button && button)
                 {
                     line.ForeColor = color;
                 }
@@ -149,13 +149,27 @@ namespace SLMPLauncher
                 }
                 catch
                 {
-                    MessageBox.Show("Не удалось запустить файл: " + UnPack.StartInfo.FileName);
+                    if (FormMain.langTranslate != "RU")
+                    {
+                        MessageBox.Show("Could not launch file: " + UnPack.StartInfo.FileName);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Не удалось запустить файл: " + UnPack.StartInfo.FileName);
+                    }
                 }
-                UnPack.WaitForExit(30000);
+                UnPack.WaitForExit();
             }
             else
             {
-                MessageBox.Show("Не удалось распаковать: " + path);
+                if (FormMain.langTranslate != "RU")
+                {
+                    MessageBox.Show("Unable to unzip: " + path);
+                }
+                else
+                {
+                    MessageBox.Show("Не удалось распаковать: " + path);
+                }
             }
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
@@ -176,7 +190,14 @@ namespace SLMPLauncher
             }
             catch
             {
-                MessageBox.Show("Не удалось запустить файл: " + Run.StartInfo.FileName);
+                if (FormMain.langTranslate != "RU")
+                {
+                    MessageBox.Show("Could not launch file: " + Run.StartInfo.FileName);
+                }
+                else
+                {
+                    MessageBox.Show("Не удалось запустить файл: " + Run.StartInfo.FileName);
+                }
                 if (onexit != null)
                 {
                     onexit(form, new EventArgs());

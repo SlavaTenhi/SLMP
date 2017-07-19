@@ -8,6 +8,9 @@ namespace SLMPLauncher
     public partial class FormMods : Form
     {
         public static string CPFilesPath = FormMain.gameFolder + @"Skyrim\CPFiles\";
+        string noFileSelect = "Не выбран файл.";
+        string confirmDelete = "Удалить мод?";
+        string confirmTitle = "Подтверждение";
 
         public FormMods()
         {
@@ -17,13 +20,26 @@ namespace SLMPLauncher
             {
                 imageBackgroundImage();
             }
+            if (FormMain.langTranslate != "RU")
+            {
+                LangTranslateEN();
+            }
             RefreshFileList();
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void imageBackgroundImage()
         {
             BackgroundImage = Properties.Resources.FormBackground;
-            FuncMisc.LabelsTextColor(this, System.Drawing.SystemColors.ControlLight, System.Drawing.Color.FromArgb(30, 30, 30));
+            FuncMisc.LabelsTextColor(this, System.Drawing.SystemColors.ControlLight, System.Drawing.Color.FromArgb(30, 30, 30), false);
+        }
+        private void LangTranslateEN()
+        {
+            label1.Text = "Files available " + Environment.NewLine + @"from the folder Skyrim\CPFiles";
+            label2.Text = "Uninstalling " + Environment.NewLine + "standard mod";
+            button_ModInstall.Text = "Install";
+            noFileSelect = "No file select.";
+            confirmDelete = "Delete mod?";
+            confirmTitle = "Confirm";
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void RefreshFileList()
@@ -45,7 +61,7 @@ namespace SLMPLauncher
             }
             else
             {
-                MessageBox.Show("Не выбран файл.");
+                MessageBox.Show(noFileSelect);
             }
         }
         private void fileUnpack(string filename)
@@ -59,66 +75,46 @@ namespace SLMPLauncher
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void buttonDeleteOSA_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Удалить OSA (OSEX)?", "Подтверждение", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                FuncClear.OSA();
-            }
+            deleteMod(FuncClear.OSA);
         }
         private void buttonDeleteAS_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Удалить Alternate Start?", "Подтверждение", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                FuncClear.AS();
-            }
+            deleteMod(FuncClear.AS);
         }
         private void buttonDeleteFFC_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Удалить Frostfall (Campfire)?", "Подтверждение", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                FuncClear.FFC();
-            }
+            deleteMod(FuncClear.FFC);
         }
         private void buttonDeleteINEED_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Удалить iNeeD?", "Подтверждение", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                FuncClear.INEED();
-            }
+            deleteMod(FuncClear.INEED);
         }
         private void buttonDeleteLAD_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Удалить LootAndDegradation?", "Подтверждение", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                FuncClear.LAD();
-            }
+            deleteMod(FuncClear.LAD);
         }
         private void buttonDeleteORD_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Удалить Ordinator?", "Подтверждение", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                FuncClear.ORD();
-            }
+            deleteMod(FuncClear.ORD);
         }
         private void buttonDeleteTunic_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Удалить Tunic?", "Подтверждение", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                FuncClear.TUNIC();
-            }
+            deleteMod(FuncClear.TUN);
         }
-        private void buttonEarsTails_Click(object sender, EventArgs e)
+        private void buttonDeleteUnPaused_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Удалить EarsTails?", "Подтверждение", MessageBoxButtons.YesNo);
+            deleteMod(FuncClear.UP);
+        }
+        private void buttonDeleteCamera_Click(object sender, EventArgs e)
+        {
+            deleteMod(FuncClear.CAM);
+        }
+        private void deleteMod(MethodInvoker method)
+        {
+            DialogResult dialogResult = MessageBox.Show(confirmDelete, confirmTitle, MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                FuncClear.ET();
+                method();
             }
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////

@@ -17,7 +17,6 @@
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.Button buttonDeleteTunic;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button buttonEarsTails;
 
         protected override void Dispose(bool disposing)
         {
@@ -44,7 +43,8 @@
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonDeleteTunic = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.buttonEarsTails = new System.Windows.Forms.Button();
+            this.buttonDeleteUnPaused = new System.Windows.Forms.Button();
+            this.buttonDeleteCamera = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,7 +86,7 @@
             // buttonDeleteOSA
             // 
             this.buttonDeleteOSA.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDeleteOSA.Location = new System.Drawing.Point(346, 193);
+            this.buttonDeleteOSA.Location = new System.Drawing.Point(259, 177);
             this.buttonDeleteOSA.Name = "buttonDeleteOSA";
             this.buttonDeleteOSA.Size = new System.Drawing.Size(82, 30);
             this.buttonDeleteOSA.TabIndex = 0;
@@ -110,7 +110,7 @@
             // buttonDeleteAS
             // 
             this.buttonDeleteAS.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDeleteAS.Location = new System.Drawing.Point(259, 85);
+            this.buttonDeleteAS.Location = new System.Drawing.Point(259, 69);
             this.buttonDeleteAS.Name = "buttonDeleteAS";
             this.buttonDeleteAS.Size = new System.Drawing.Size(82, 30);
             this.buttonDeleteAS.TabIndex = 0;
@@ -122,7 +122,7 @@
             // buttonDeleteFFC
             // 
             this.buttonDeleteFFC.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDeleteFFC.Location = new System.Drawing.Point(259, 121);
+            this.buttonDeleteFFC.Location = new System.Drawing.Point(259, 105);
             this.buttonDeleteFFC.Name = "buttonDeleteFFC";
             this.buttonDeleteFFC.Size = new System.Drawing.Size(82, 30);
             this.buttonDeleteFFC.TabIndex = 0;
@@ -134,7 +134,7 @@
             // buttonDeleteINEED
             // 
             this.buttonDeleteINEED.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDeleteINEED.Location = new System.Drawing.Point(346, 121);
+            this.buttonDeleteINEED.Location = new System.Drawing.Point(346, 105);
             this.buttonDeleteINEED.Name = "buttonDeleteINEED";
             this.buttonDeleteINEED.Size = new System.Drawing.Size(82, 30);
             this.buttonDeleteINEED.TabIndex = 0;
@@ -146,19 +146,19 @@
             // buttonDeleteLAD
             // 
             this.buttonDeleteLAD.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDeleteLAD.Location = new System.Drawing.Point(346, 85);
+            this.buttonDeleteLAD.Location = new System.Drawing.Point(259, 141);
             this.buttonDeleteLAD.Name = "buttonDeleteLAD";
             this.buttonDeleteLAD.Size = new System.Drawing.Size(82, 30);
             this.buttonDeleteLAD.TabIndex = 0;
             this.buttonDeleteLAD.TabStop = false;
-            this.buttonDeleteLAD.Text = "L. And D.";
+            this.buttonDeleteLAD.Text = "L. and D.";
             this.buttonDeleteLAD.UseVisualStyleBackColor = true;
             this.buttonDeleteLAD.Click += new System.EventHandler(this.buttonDeleteLAD_Click);
             // 
             // buttonDeleteORD
             // 
             this.buttonDeleteORD.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDeleteORD.Location = new System.Drawing.Point(259, 157);
+            this.buttonDeleteORD.Location = new System.Drawing.Point(346, 141);
             this.buttonDeleteORD.Name = "buttonDeleteORD";
             this.buttonDeleteORD.Size = new System.Drawing.Size(82, 30);
             this.buttonDeleteORD.TabIndex = 0;
@@ -193,7 +193,7 @@
             // buttonDeleteTunic
             // 
             this.buttonDeleteTunic.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDeleteTunic.Location = new System.Drawing.Point(346, 157);
+            this.buttonDeleteTunic.Location = new System.Drawing.Point(346, 177);
             this.buttonDeleteTunic.Name = "buttonDeleteTunic";
             this.buttonDeleteTunic.Size = new System.Drawing.Size(82, 30);
             this.buttonDeleteTunic.TabIndex = 0;
@@ -211,17 +211,29 @@
             this.label3.Size = new System.Drawing.Size(435, 289);
             this.label3.TabIndex = 0;
             // 
-            // buttonEarsTails
+            // buttonDeleteUnPaused
             // 
-            this.buttonEarsTails.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonEarsTails.Location = new System.Drawing.Point(259, 193);
-            this.buttonEarsTails.Name = "buttonEarsTails";
-            this.buttonEarsTails.Size = new System.Drawing.Size(82, 30);
-            this.buttonEarsTails.TabIndex = 0;
-            this.buttonEarsTails.TabStop = false;
-            this.buttonEarsTails.Text = "EarsTails";
-            this.buttonEarsTails.UseVisualStyleBackColor = true;
-            this.buttonEarsTails.Click += new System.EventHandler(this.buttonEarsTails_Click);
+            this.buttonDeleteUnPaused.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonDeleteUnPaused.Location = new System.Drawing.Point(302, 213);
+            this.buttonDeleteUnPaused.Name = "buttonDeleteUnPaused";
+            this.buttonDeleteUnPaused.Size = new System.Drawing.Size(82, 30);
+            this.buttonDeleteUnPaused.TabIndex = 0;
+            this.buttonDeleteUnPaused.TabStop = false;
+            this.buttonDeleteUnPaused.Text = "UnPaused";
+            this.buttonDeleteUnPaused.UseVisualStyleBackColor = true;
+            this.buttonDeleteUnPaused.Click += new System.EventHandler(this.buttonDeleteUnPaused_Click);
+            // 
+            // buttonDeleteCamera
+            // 
+            this.buttonDeleteCamera.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonDeleteCamera.Location = new System.Drawing.Point(346, 69);
+            this.buttonDeleteCamera.Name = "buttonDeleteCamera";
+            this.buttonDeleteCamera.Size = new System.Drawing.Size(82, 30);
+            this.buttonDeleteCamera.TabIndex = 0;
+            this.buttonDeleteCamera.TabStop = false;
+            this.buttonDeleteCamera.Text = "Camera";
+            this.buttonDeleteCamera.UseVisualStyleBackColor = true;
+            this.buttonDeleteCamera.Click += new System.EventHandler(this.buttonDeleteCamera_Click);
             // 
             // FormMods
             // 
@@ -230,10 +242,11 @@
             this.BackgroundImage = global::SLMPLauncher.Properties.Resources.FormBackgroundNone;
             this.ClientSize = new System.Drawing.Size(435, 289);
             this.ControlBox = false;
-            this.Controls.Add(this.buttonEarsTails);
             this.Controls.Add(this.buttonDeleteTunic);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.buttonDeleteCamera);
+            this.Controls.Add(this.buttonDeleteUnPaused);
             this.Controls.Add(this.buttonDeleteORD);
             this.Controls.Add(this.buttonDeleteLAD);
             this.Controls.Add(this.buttonDeleteINEED);
@@ -256,6 +269,10 @@
             this.Text = "SLMP: Mods";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+
         }
+
+        private System.Windows.Forms.Button buttonDeleteUnPaused;
+        private System.Windows.Forms.Button buttonDeleteCamera;
     }
 }

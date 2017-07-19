@@ -17,6 +17,19 @@ namespace SLMPLauncher
         string nameDLFolderHost = "/_SLMP-GR/";
         string downloadFileType = null;
         string downloadFileName = null;
+        string buttonUpdateCP_TE = "Обновить";
+        string buttonUpdateCP_TN = "Нет обновления";
+        string buttonCvsU_TI = "Установлено";
+        string buttonCvsU_TU = "Обновить";
+        string buttonCvsU_TS = "Стоп";
+        string buttonCvsU_TC = "Проверить";
+        string label4_T = "нет обновлений";
+        string label5_T = "Размер: ";
+        string wrongPing = "Нет доступа к: ";
+        string installedUpdate = "Установлено / ";
+        string installedUpdateN = "Обновление / ";
+        string notSyncWithUI = "Скачанный файл не соответствует UpdateInfo. Повторите попытку.";
+        string noTools = "Нет компонентов для установки обновления (файла обновления, UnRAR или UpdateInfo).";
         bool updatesFound = false;
         bool stopDownload = false;
         bool updatesCPFound = false;
@@ -37,12 +50,39 @@ namespace SLMPLauncher
             {
                 imageBackgroundImage();
             }
+            if (FormMain.langTranslate != "RU")
+            {
+                LangTranslateEN();
+            }
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void imageBackgroundImage()
         {
             BackgroundImage = Properties.Resources.FormBackground;
-            FuncMisc.LabelsTextColor(this, System.Drawing.SystemColors.ControlLight, System.Drawing.Color.FromArgb(30, 30, 30));
+            FuncMisc.LabelsTextColor(this, System.Drawing.SystemColors.ControlLight, System.Drawing.Color.FromArgb(30, 30, 30), false);
+        }
+        private void LangTranslateEN()
+        {
+            label1.Text = "Game and control panel updates";
+            label2.Text = "Panel update";
+            label3.Text = "Available files";
+            label4.Text = "Not check";
+            buttonAboutU.Text = "About update";
+            buttonUpdateCP.Text = "Not check";
+            buttonUpdateCP_TE = "Update";
+            buttonUpdateCP_TN = "No updates";
+            buttonCvsU.Text = "Check";
+            buttonCvsU_TI = "Installed";
+            buttonCvsU_TU = "Update";
+            buttonCvsU_TS = "Stop";
+            buttonCvsU_TC = "Check";
+            label4_T = "no updates";
+            label5_T = "Size: ";
+            wrongPing = "No access to: ";
+            installedUpdate = "Installed / ";
+            installedUpdateN = "Update / ";
+            notSyncWithUI = "The downloaded file does not correspond to UpdateInfo. Try again.";
+            noTools = "No components to install the update (update file, UnRAR or UpdateInfo).";
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void buttonCheckU_Click(object sender, EventArgs e)
@@ -65,10 +105,17 @@ namespace SLMPLauncher
                         MessageBox.Show(line);
                         line = null;
                     }
-                    FuncFiles.Delete(updateFolder + "file" + numberSelectFile + ".rar");
-                    downloadFileName = "file" + numberSelectFile + ".rar";
-                    downloadFileType = "UpdateG";
-                    client_DownloadProgressStart();
+                    if (checkUpdateFile(false))
+                    {
+                        unpackUpdates();
+                    }
+                    else
+                    {
+                        FuncFiles.Delete(updateFolder + "file" + numberSelectFile + ".rar");
+                        downloadFileName = "file" + numberSelectFile + ".rar";
+                        downloadFileType = "UpdateG";
+                        client_DownloadProgressStart();
+                    }
                 }
                 else
                 {
@@ -106,22 +153,22 @@ namespace SLMPLauncher
                 {
                     comboBox1.Enabled = false;
                     buttonAboutU.Enabled = false;
-                    buttonCvsU.Text = "Стоп";
+                    buttonCvsU.Text = buttonCvsU_TS;
                 }
                 else
                 {
                     comboBox1.Enabled = true;
                     buttonAboutU.Enabled = true;
-                    label5.Text = "Размер: " + FuncParser.convertFileSize(FuncParser.intRead(updateFolder + nameUpdateInfo, "Update_" + numberSelectFile, "update_file_filesize"));
+                    label5.Text = label5_T + FuncParser.convertFileSize(FuncParser.doubleRead(updateFolder + nameUpdateInfo, "Update_" + numberSelectFile, "update_file_filesize"));
                     if (updateInstall)
                     {
                         buttonCvsU.Enabled = false;
-                        buttonCvsU.Text = "Установлено";
+                        buttonCvsU.Text = buttonCvsU_TI;
                     }
                     else
                     {
                         buttonCvsU.Enabled = true;
-                        buttonCvsU.Text = "Обновить";
+                        buttonCvsU.Text = buttonCvsU_TU;
                     }
                 }
             }
@@ -132,11 +179,11 @@ namespace SLMPLauncher
                 label5.Text = "";
                 if (stopDownload)
                 {
-                    buttonCvsU.Text = "Стоп";
+                    buttonCvsU.Text = buttonCvsU_TS;
                 }
                 else
                 {
-                    buttonCvsU.Text = "Проверить";
+                    buttonCvsU.Text = buttonCvsU_TC;
                 }
             }
             if (updatesCPFound)
@@ -144,18 +191,17 @@ namespace SLMPLauncher
                 if (stopDownload)
                 {
                     buttonUpdateCP.Enabled = false;
-                    buttonUpdateCP.Text = "В процессе...";
                 }
                 else
                 {
                     buttonUpdateCP.Enabled = true;
-                    buttonUpdateCP.Text = "Обновить";
+                    buttonUpdateCP.Text = buttonUpdateCP_TE;
                 }
             }
             else
             {
                 buttonUpdateCP.Enabled = false;
-                buttonUpdateCP.Text = "Нет обновления";
+                buttonUpdateCP.Text = buttonUpdateCP_TN;
             }
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
@@ -170,7 +216,7 @@ namespace SLMPLauncher
             {
                 stopDownload = false;
                 EnableDisableButtons();
-                MessageBox.Show("Нет доступа к: " + nameHostName + nameDLFolderHost + downloadFileName);
+                MessageBox.Show(wrongPing + nameHostName + nameDLFolderHost + downloadFileName);
             }
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
@@ -196,12 +242,12 @@ namespace SLMPLauncher
                                 if (checkUpdateVersion(i))
                                 {
                                     realIndexI.Add(i);
-                                    installPreLoad.Add("Установлено / " + FuncParser.stringRead(updateFolder + nameUpdateInfo, "Update_" + i, "update_file"));
+                                    installPreLoad.Add(installedUpdate + FuncParser.stringRead(updateFolder + nameUpdateInfo, "Update_" + i, "update_file"));
                                 }
                                 else
                                 {
                                     realIndex.Add(i);
-                                    comboBox1.Items.Add("Обновление / " + FuncParser.stringRead(updateFolder + nameUpdateInfo, "Update_" + i, "update_file"));
+                                    comboBox1.Items.Add(installedUpdateN + FuncParser.stringRead(updateFolder + nameUpdateInfo, "Update_" + i, "update_file"));
                                 }
                                 comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
                             }
@@ -220,7 +266,7 @@ namespace SLMPLauncher
                         else
                         {
                             updatesFound = false;
-                            label4.Text = "Нет обновлений";
+                            label4.Text = label4_T;
                         }
                         string line = FuncParser.stringRead(updateFolder + nameUpdateInfo, "General", "version_control_panel");
                         if (line != null)
@@ -238,27 +284,9 @@ namespace SLMPLauncher
                     }
                     if (downloadFileType == "UpdateG")
                     {
-                        if (File.Exists(updateFolder + "file" + numberSelectFile + ".rar") && File.Exists(updateFolder + nameUpdateInfo) && File.Exists(FormMain.launcherFolder + "UnRAR.exe"))
+                        if (checkUpdateFile(true))
                         {
-                            if (new FileInfo(updateFolder + "file" + numberSelectFile + ".rar").Length == FuncParser.intRead(updateFolder + nameUpdateInfo, "Update_" + numberSelectFile, "update_file_filesize"))
-                            {
-                                FuncMisc.UnPackRAR(updateFolder + "file" + numberSelectFile + ".rar");
-                                if (File.Exists(updateFolder + "Update_" + numberSelectFile + ".bat"))
-                                {
-                                    Process.Start(updateFolder + "Update_" + numberSelectFile + ".bat");
-                                }
-                                FuncParser.iniWrite(FormMain.iniLauncher, "Updates", "Update_" + numberSelectFile + "_Version", FuncParser.stringRead(updateFolder + nameUpdateInfo, "Update_" + numberSelectFile, "update_file_version"));
-                                comboBox1_SelectedIndexChanged(this, new EventArgs());
-                            }
-                            else
-                            {
-                                MessageBox.Show("Скачанный файл не соответствует UpdateInfo. Повторите попытку.");
-                                FuncFiles.Delete(updateFolder + "file" + numberSelectFile + ".rar");
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Нет компонентов для установки обновления (файла обновления, UnRAR или UpdateInfo).");
+                            unpackUpdates();
                         }
                     }
                     if (downloadFileType == "UpdateCP")
@@ -299,7 +327,7 @@ namespace SLMPLauncher
                         }
                         else
                         {
-                            MessageBox.Show("Версия скачанного файла не совпадает с UpdateInfo.");
+                            MessageBox.Show(notSyncWithUI);
                             FuncFiles.Delete(updateFolder + nameControlPanel);
                         }
                     }
@@ -314,6 +342,43 @@ namespace SLMPLauncher
             progressBar1.Value = 0;
             EnableDisableButtons();
         }
+
+        private bool checkUpdateFile(bool fromDL)
+        {
+            if (File.Exists(updateFolder + "file" + numberSelectFile + ".rar") && File.Exists(updateFolder + nameUpdateInfo) && File.Exists(FormMain.launcherFolder + "UnRAR.exe"))
+            {
+                if (new FileInfo(updateFolder + "file" + numberSelectFile + ".rar").Length == FuncParser.doubleRead(updateFolder + nameUpdateInfo, "Update_" + numberSelectFile, "update_file_filesize"))
+                {
+                    return true;
+                }
+                else
+                {
+                    if (fromDL)
+                    {
+                        MessageBox.Show(notSyncWithUI);
+                    }
+                    FuncFiles.Delete(updateFolder + "file" + numberSelectFile + ".rar");
+                }
+            }
+            else
+            {
+                if (fromDL)
+                {
+                    MessageBox.Show(noTools);
+                }
+            }
+            return false;
+        }
+        private void unpackUpdates()
+        {
+            FuncMisc.UnPackRAR(updateFolder + "file" + numberSelectFile + ".rar");
+            if (File.Exists(updateFolder + "Update_" + numberSelectFile + ".bat"))
+            {
+                Process.Start(updateFolder + "Update_" + numberSelectFile + ".bat");
+            }
+            FuncParser.iniWrite(FormMain.iniLauncher, "Updates", "Update_" + numberSelectFile + "_Version", FuncParser.stringRead(updateFolder + nameUpdateInfo, "Update_" + numberSelectFile, "update_file_version"));
+            comboBox1_SelectedIndexChanged(this, new EventArgs());
+        }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -322,7 +387,7 @@ namespace SLMPLauncher
             {
                 updateInstall = true;
                 comboBox1.SelectedIndexChanged -= comboBox1_SelectedIndexChanged;
-                comboBox1.Items[comboBox1.SelectedIndex] = "Установлено / " + FuncParser.stringRead(updateFolder + nameUpdateInfo, "Update_" + numberSelectFile, "update_file");
+                comboBox1.Items[comboBox1.SelectedIndex] = installedUpdate + FuncParser.stringRead(updateFolder + nameUpdateInfo, "Update_" + numberSelectFile, "update_file");
                 comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             }
             else

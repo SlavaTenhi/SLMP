@@ -16,12 +16,20 @@ namespace SLMPLauncher
             {
                 imageBackgroundImage();
             }
+            if (FormMain.langTranslate != "RU")
+            {
+                LangTranslateEN();
+            }
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void imageBackgroundImage()
         {
             BackgroundImage = Properties.Resources.FormBackground;
             label1.ForeColor = System.Drawing.SystemColors.ControlLight;
+        }
+        private void LangTranslateEN()
+        {
+            label1.Text = "Unpacking at the root of the game " + Environment.NewLine + "programs for editing the game:";
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void buttonUnpackCreationKit_Click(object sender, EventArgs e)

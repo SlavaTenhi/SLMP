@@ -17,6 +17,9 @@ namespace SLMPLauncher
         string waitBuffer = "Ожидание завершения кадра видеоадаптером, помогает при мерцании изображения, снижает производительность.";
         string aaSUB = "Подпиксельное сглаживание зеркального отражения.";
         string aaTEMP = "Временное сглаживание обусловлено частотой дискретизации.";
+        string noFileSelect = "Не выбран файл.";
+        string removeENBFiles = "Удалить все файлы ENB?";
+        string confirmTitle = "Подтверждение";
         bool aa = false;
         bool aasub = false;
         bool aatemp = false;
@@ -35,9 +38,10 @@ namespace SLMPLauncher
             {
                 imageBackgroundImage();
             }
-            refreshFileList();
-            refreshAllValue();
-            FuncSettings.ENBCheck(false);
+            if (FormMain.langTranslate != "RU")
+            {
+                LangTranslateEN();
+            }
             toolTip1.SetToolTip(trackBar1, reservedMemory);
             toolTip1.SetToolTip(label2, reservedMemory);
             toolTip1.SetToolTip(label3, reservedMemory);
@@ -53,12 +57,41 @@ namespace SLMPLauncher
             toolTip1.SetToolTip(buttonSubPixelAA, aaSUB);
             toolTip1.SetToolTip(buttonTemporalAA, aaTEMP);
             toolTip1.SetToolTip(label7, aaTEMP);
+            refreshFileList();
+            refreshAllValue();
+            FuncSettings.ENBCheck(false);
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void imageBackgroundImage()
         {
             BackgroundImage = Properties.Resources.FormBackground;
-            FuncMisc.LabelsTextColor(this, System.Drawing.SystemColors.ControlLight, System.Drawing.Color.FromArgb(30, 30, 30));
+            FuncMisc.LabelsTextColor(this, System.Drawing.SystemColors.ControlLight, System.Drawing.Color.FromArgb(30, 30, 30), false);
+        }
+        private void LangTranslateEN()
+        {
+            reservedMemory = "Reservation of memory for effectsENB.";
+            driverDisable = "Disable memory management by the driver and grant this authority ENB.";
+            dinamicDOF = "Depth Of Field - dynamic blur of the background, focus.";
+            ambOcc = "Adds additional shading to objects, reduces performance.";
+            waitBuffer = "Waiting for the frame to complete the video adapter, helps flicker the image, reduces performance.";
+            aaSUB = "Subpixel antialiasing mirror reflection.";
+            aaTEMP = "Temporal antialiasing smoothing is due to the sampling rate.";
+            label4.Text = "Antialiasing";
+            label12.Text = "Subpixel";
+            label7.Text = "Temporal";
+            label13.Text = "Filtration";
+            label5.Text = "FPS limit";
+            label8.Text = "Dynamic DOF";
+            label11.Text = "Ambient Occlusion";
+            label6.Text = "Wait Busy Renderer";
+            label9.Text = "Disable driver";
+            label3.Text = "Reserved Memory:";
+            label1.Text = "Files available" + Environment.NewLine + @"from the folder Skyrim\ENB";
+            unpackENB.Text = "Install";
+            deleteAllENBsFiles.Text = "Delete all ENB files?";
+            noFileSelect = "No file select.";
+            removeENBFiles = "Delete all ENB files?";
+            confirmTitle = "Confirm";
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void refreshAllValue()
@@ -94,7 +127,7 @@ namespace SLMPLauncher
             }
             else
             {
-                MessageBox.Show("Не выбран файл.");
+                MessageBox.Show(noFileSelect);
             }
         }
         private void enbUnpack(string filename)
@@ -112,7 +145,7 @@ namespace SLMPLauncher
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void deleteAllENBsFiles_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Удалить все файлы ENB?", "Подтверждение", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show(removeENBFiles, confirmTitle, MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 FuncClear.ENB();

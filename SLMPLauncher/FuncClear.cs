@@ -19,8 +19,6 @@ namespace SLMPLauncher
             @"SKYRIM.exe",
             @"steam_api.dll",
             @"TESV.exe",
-            @"Data\1nivWICCloaks.bsa",
-            @"Data\1nivWICCloaks.esp",
             @"Data\AcquisitiveSoulGem.bsa",
             @"Data\AcquisitiveSoulGem.esp",
             @"Data\AHZmoreHUD.bsa",
@@ -31,6 +29,8 @@ namespace SLMPLauncher
             @"Data\AlwaysPickUpBooks.esp",
             @"Data\AMatterOfTime.bsa",
             @"Data\AMatterOfTime.esp",
+            @"Data\Armors.bsa",
+            @"Data\Armors.esp",
             @"Data\Audio Overhaul.bsa",
             @"Data\Audio Overhaul.esp",
             @"Data\BFSEffects.bsa",
@@ -39,20 +39,16 @@ namespace SLMPLauncher
             @"Data\Blacksmith Chests.esp",
             @"Data\Book Covers Skyrim.bsa",
             @"Data\Book Covers Skyrim.esp",
-            @"Data\Books Of Skyrim.bsa",
-            @"Data\Books Of Skyrim.esp",
+            @"Data\CameraScripter.bsa",
+            @"Data\CameraScripter.esp",
             @"Data\Campfire.bsa",
             @"Data\Campfire.esm",
-            @"Data\ChangeFollowerOutfits.bsa",
-            @"Data\ChangeFollowerOutfits.esp",
-            @"Data\Wearable Lantern.bsa",
-            @"Data\Wearable Lantern.esp",
             @"Data\ClimatesOfTamriel.bsa",
             @"Data\ClimatesOfTamriel.esp",
             @"Data\Cloaks.bsa",
             @"Data\Cloaks.esp",
-            @"Data\ClothingWeaponClutter.bsa",
-            @"Data\ClothingWeaponClutter.esp",
+            @"Data\CCFWAF.bsa",
+            @"Data\CCFWAF.esp",
             @"Data\CoinPurse.bsa",
             @"Data\CoinPurse.esp",
             @"Data\Customizable Camera.bsa",
@@ -76,20 +72,20 @@ namespace SLMPLauncher
             @"Data\Dual Wield Parrying.esp",
             @"Data\Dynamic Depth of Field.bsa",
             @"Data\Dynamic Depth of Field.esp",
-            @"Data\EarsTails.bsa",
-            @"Data\EarsTails.esp",
-            @"Data\ENBvision.bsa",
-            @"Data\ENBvision.esp",
+            @"Data\ENB Night Vision.bsa",
+            @"Data\ENB Night Vision.esp",
             @"Data\EnhancedLightsFX.bsa",
             @"Data\EnhancedLightsFX.esp",
-            @"Data\FaceMasksOfSkyrim.bsa",
-            @"Data\FaceMasksOfSkyrim.esp",
-            @"Data\Faction Crossbows.bsa",
-            @"Data\Faction Crossbows.esp",
+            @"Data\EyesHairs.bsa",
+            @"Data\EyesHairs.esp",
             @"Data\Falskaar.bsa",
             @"Data\Falskaar.esp",
-            @"Data\F N I S.bsa",
-            @"Data\F N I S.esp",
+            @"Data\FollowerOutfits.bsa",
+            @"Data\FollowerOutfits.esp",
+            @"Data\FNIS.bsa",
+            @"Data\FNIS.esp",
+            @"Data\FloraRespawnFix.bsa",
+            @"Data\FloraRespawnFix.esp",
             @"Data\Follower Commentary.bsa",
             @"Data\Follower Commentary.esp",
             @"Data\Footprints.bsa",
@@ -112,21 +108,13 @@ namespace SLMPLauncher
             @"Data\GameVoice2.bsa",
             @"Data\getSnowy.bsa",
             @"Data\getSnowy.esp",
-            @"Data\GuardDialogueOverhaul.bsa",
-            @"Data\GuardDialogueOverhaul.esp",
-            @"Data\HDT Earring.bsa",
-            @"Data\HDT Earring.esp",
-            @"Data\HDT Hairs.bsa",
-            @"Data\HDT Hairs.esp",
             @"Data\Headtracking.bsa",
             @"Data\Headtracking.esp",
             @"Data\HearthFires.esm",
             @"Data\HelmetToggle.bsa",
             @"Data\HelmetToggle.esp",
-            @"Data\HorseInventory.bsa",
-            @"Data\HorseInventory.esp",
-            @"Data\Huntsman.bsa",
-            @"Data\Huntsman.esp",
+            @"Data\HorseArmor.bsa",
+            @"Data\HorseArmor.esp",
             @"Data\iHUD.bsa",
             @"Data\iHUD.esp",
             @"Data\Immersive Citizens.bsa",
@@ -140,36 +128,24 @@ namespace SLMPLauncher
             @"Data\InvisEyeFixes.esp",
             @"Data\JaxonzMapMarkers.bsa",
             @"Data\JaxonzMapMarkers.esp",
-            @"Data\JSwords.bsa",
-            @"Data\JSwords.esp",
             @"Data\Landscape Improved.bsa",
             @"Data\Landscape Improved.esp",
-            @"Data\Left Hand Rings.bsa",
-            @"Data\Left Hand Rings.esp",
+            @"Data\Leveled Enemy.bsa",
             @"Data\Leveled Enemy.esp",
-            @"Data\Leveled Items.esp",
             @"Data\LootAndDegradation.bsa",
             @"Data\LootAndDegradation.esp",
-            @"Data\LoreWeaponExpansion.bsa",
-            @"Data\LoreWeaponExpansion.esp",
             @"Data\Naked.bsa",
             @"Data\Naked.esp",
             @"Data\NIOVHH.bsa",
             @"Data\NIOVHH.esp",
-            @"Data\Open Helmet.bsa",
-            @"Data\Open Helmet.esp",
             @"Data\Ordinator.bsa",
             @"Data\Ordinator.esp",
-            @"Data\OSAsex.bsa",
-            @"Data\OSAsex.esp",
+            @"Data\OSA.bsa",
+            @"Data\OSA.esm",
             @"Data\Quests Markers.bsa",
             @"Data\Quests Markers.esp",
             @"Data\RaceMenu.bsa",
             @"Data\RaceMenu.esp",
-            @"Data\RitualArmorofBoethiah.bsa",
-            @"Data\RitualArmorofBoethiah.esp",
-            @"Data\Skyforge Weapon.bsa",
-            @"Data\Skyforge Weapon.esp",
             @"Data\Skyrim.esm",
             @"Data\SkyUI.bsa",
             @"Data\SkyUI.esp",
@@ -177,16 +153,14 @@ namespace SLMPLauncher
             @"Data\TradeBarter.esp",
             @"Data\Tunic.bsa",
             @"Data\Tunic.esp",
-            @"Data\Unique Uniques.bsa",
-            @"Data\Unique Uniques.esp",
-            @"Data\UniqueBorderGates.bsa",
-            @"Data\UniqueBorderGates.esp",
             @"Data\Unofficial Skyrim Legendary Edition Patch.bsa",
             @"Data\Unofficial Skyrim Legendary Edition Patch.esp",
             @"Data\Update.bsa",
             @"Data\Update.esm",
-            @"Data\FloraRespawnFix.bsa",
-            @"Data\FloraRespawnFix.esp",
+            @"Data\Weapons.bsa",
+            @"Data\Weapons.esp",
+            @"Data\Wearable Lantern.bsa",
+            @"Data\Wearable Lantern.esp",
             @"Data\WondersofWeather.bsa",
             @"Data\WondersofWeather.esp",
             @"Data\Wyrmstooth.bsa",
@@ -202,37 +176,42 @@ namespace SLMPLauncher
             @"Data\Scripts\FNIS_aa2.pex",
             @"Data\SKSE\SKSE.ini",
             @"Data\SKSE\Plugins\AHZmoreHUDPlugin.dll",
+            @"Data\SKSE\Plugins\BarterFix.dll",
             @"Data\SKSE\Plugins\BugFixPlugin.dll",
             @"Data\SKSE\Plugins\BugFixPlugin.ini",
+            @"Data\SKSE\Plugins\CameraScripter.dll",
             @"Data\SKSE\Plugins\chargen.dll",
             @"Data\SKSE\Plugins\chargen.ini",
             @"Data\SKSE\Plugins\CPConvert.dll",
             @"Data\SKSE\Plugins\CPConvert.ini",
             @"Data\SKSE\Plugins\CrashFixPlugin.dll",
             @"Data\SKSE\Plugins\CrashFixPlugin.ini",
+            @"Data\SKSE\Plugins\encounter_zones_unlocked.dll",
+            @"Data\SKSE\Plugins\encounter_zones_unlocked.ini",
             @"Data\SKSE\Plugins\EnchantReloadFix.dll",
             @"Data\SKSE\Plugins\hdtPhysicsExtensions.dll",
             @"Data\SKSE\Plugins\hdtPhysicsExtensions.ini",
             @"Data\SKSE\Plugins\hdtPhysicsExtensionsDefaultBBP.xml",
-            @"Data\SKSE\Plugins\hdtPhysicsExtensionsDefaultBBP_ORIG.xml",
             @"Data\SKSE\Plugins\hdtSittingHeightFix.dll",
             @"Data\SKSE\Plugins\hdtSittingHeightFix_AnimationList.txt",
             @"Data\SKSE\Plugins\hdtSkyrimMemPatch.dll",
             @"Data\SKSE\Plugins\hdtSkyrimMemPatch.ini",
+            @"Data\SKSE\Plugins\improvement_names.dll",
+            @"Data\SKSE\Plugins\improvement_names.ini",
             @"Data\SKSE\Plugins\MfgConsole.dll",
             @"Data\SKSE\Plugins\MfgConsole.ini",
             @"Data\SKSE\Plugins\nioverride.dll",
             @"Data\SKSE\Plugins\nioverride.ini",
             @"Data\SKSE\Plugins\OSA.dll",
             @"Data\SKSE\Plugins\ru_fix.dll",
+            @"Data\SKSE\Plugins\SkyrimSouls.dll",
+            @"Data\SKSE\Plugins\SkyrimSouls.ini",
             @"Data\SKSE\Plugins\SKSE_EnhancedCamera.dll",
             @"Data\SKSE\Plugins\SKSE_EnhancedCamera.ini",
             @"Data\SKSE\Plugins\skse_russian_helper.dll",
             @"Data\SKSE\Plugins\StorageUtil.dll",
             @"Data\SKSE\Plugins\ToggleWalkRunFix.dll",
             @"Data\SkyProc Patchers\Dual Sheath Redux Patch\Dual Sheath Redux Patch.jar",
-            @"Data\Video\Falskaar_Intro.bik",
-            @"Data\Video\Falskaar_Outro.bik",
             @"Skyrim\Skyrim.ini",
             @"Skyrim\SkyrimPrefs.ini",
             @"Skyrim\SLMPIgnoreFiles.ini",
@@ -243,6 +222,7 @@ namespace SLMPLauncher
         static SortedSet<string> IgnoreListFolders = new SortedSet<string>(StringComparer.OrdinalIgnoreCase)
         {
             @"Data",
+            @"Data\CameraScripts",
             @"Data\Meshes",
             @"Data\Meshes\0SA",
             @"Data\Meshes\0SP",
@@ -283,7 +263,6 @@ namespace SLMPLauncher
             @"Data\SkyProc Patchers\Dual Sheath Redux Patch",
             @"Data\Tools",
             @"Data\Tools\GenerateFNIS_for_Users",
-            @"Data\Video",
             @"ENBSeries",
             @"Logs",
             @"Skyrim",
@@ -302,6 +281,7 @@ namespace SLMPLauncher
             @"Skyrim\ENB",
             @"Skyrim\LangVoice",
             @"Skyrim\MasterList",
+            @"Data\CameraScripts",
             @"Data\Meshes\0SA",
             @"Data\Meshes\0SP",
             @"Data\Meshes\Actors\Character\Animations",
@@ -403,10 +383,6 @@ namespace SLMPLauncher
         public static void ENB()
         {
             FuncFiles.Delete(FormMain.gameFolder + "CINEMATIC");
-            FuncFiles.Delete(FormMain.gameFolder + "CR-Enb.dll");
-            FuncFiles.Delete(FormMain.gameFolder + "Custom_LUT1.bmp");
-            FuncFiles.Delete(FormMain.gameFolder + "Custom_LUT2.bmp");
-            FuncFiles.Delete(FormMain.gameFolder + "Custom_LUT3.bmp");
             FuncFiles.Delete(FormMain.gameFolder + "EED_verasansmono.bmp");
             FuncFiles.Delete(FormMain.gameFolder + "ELEP Additional Shaders");
             FuncFiles.Delete(FormMain.gameFolder + "ENBInjector.exe");
@@ -414,23 +390,9 @@ namespace SLMPLauncher
             FuncFiles.Delete(FormMain.gameFolder + "EnhancedENBDiagnostics.fxh");
             FuncFiles.Delete(FormMain.gameFolder + "FXAA_Tool.exe");
             FuncFiles.Delete(FormMain.gameFolder + "FixForBrightObjects.txt");
-            FuncFiles.Delete(FormMain.gameFolder + "Headers");
-            FuncFiles.Delete(FormMain.gameFolder + "LUT_1.bmp");
-            FuncFiles.Delete(FormMain.gameFolder + "LUT_10.bmp");
-            FuncFiles.Delete(FormMain.gameFolder + "LUT_11.bmp");
-            FuncFiles.Delete(FormMain.gameFolder + "LUT_12.bmp");
-            FuncFiles.Delete(FormMain.gameFolder + "LUT_2.bmp");
-            FuncFiles.Delete(FormMain.gameFolder + "LUT_3.bmp");
-            FuncFiles.Delete(FormMain.gameFolder + "LUT_4.bmp");
-            FuncFiles.Delete(FormMain.gameFolder + "LUT_5.bmp");
-            FuncFiles.Delete(FormMain.gameFolder + "LUT_6.bmp");
-            FuncFiles.Delete(FormMain.gameFolder + "LUT_7.bmp");
-            FuncFiles.Delete(FormMain.gameFolder + "LUT_8.bmp");
-            FuncFiles.Delete(FormMain.gameFolder + "LUT_9.bmp");
             FuncFiles.Delete(FormMain.gameFolder + "SMAA.fx");
             FuncFiles.Delete(FormMain.gameFolder + "SMAA.h");
             FuncFiles.Delete(FormMain.gameFolder + "SMAA_DX11.fx");
-            FuncFiles.Delete(FormMain.gameFolder + "STRONG WARM");
             FuncFiles.Delete(FormMain.gameFolder + "Shader Functions");
             FuncFiles.Delete(FormMain.gameFolder + "SweetFX");
             FuncFiles.Delete(FormMain.gameFolder + "SweetFX_d3d9.dll");
@@ -483,59 +445,17 @@ namespace SLMPLauncher
             FuncFiles.Delete(FormMain.gameFolder + "enblensmask.bmp");
             FuncFiles.Delete(FormMain.gameFolder + "enblensmask.png");
             FuncFiles.Delete(FormMain.gameFolder + "enblensmask.tga");
-            FuncFiles.Delete(FormMain.gameFolder + "enblensmask_16.9.png");
-            FuncFiles.Delete(FormMain.gameFolder + "enblensmask_Alternative_Incr Dirt Int.bmp");
-            FuncFiles.Delete(FormMain.gameFolder + "enblensmask_Alternative_Incr Dirt Int.tga");
-            FuncFiles.Delete(FormMain.gameFolder + "enblensmask_Blue Pentagons Default.tga");
-            FuncFiles.Delete(FormMain.gameFolder + "enblensmask_Blue Pentagons.bmp");
-            FuncFiles.Delete(FormMain.gameFolder + "enblensmask_Default Bitmap.bmp");
-            FuncFiles.Delete(FormMain.gameFolder + "enblensmask_Default.bmp");
-            FuncFiles.Delete(FormMain.gameFolder + "enblensmask_Default_Alternative.bmp");
-            FuncFiles.Delete(FormMain.gameFolder + "enblensmask_Light Alternative 2.bmp");
-            FuncFiles.Delete(FormMain.gameFolder + "enblensmask_Light Alternative.bmp");
-            FuncFiles.Delete(FormMain.gameFolder + "enblensmask_Original Default.tga");
-            FuncFiles.Delete(FormMain.gameFolder + "enblensmask_Red Pentagons Default.tga");
-            FuncFiles.Delete(FormMain.gameFolder + "enblensmask_Softer Alternative.tga");
-            FuncFiles.Delete(FormMain.gameFolder + "enblensmask_Softer_Incr Dirt Int.bmp");
-            FuncFiles.Delete(FormMain.gameFolder + "enblensmask_Softer_Incr Dirt Int.tga");
-            FuncFiles.Delete(FormMain.gameFolder + "enblensmask_anamorphic.png");
-            FuncFiles.Delete(FormMain.gameFolder + "enblensmask_square01.bmp");
-            FuncFiles.Delete(FormMain.gameFolder + "enblensmask_square02.bmp");
-            FuncFiles.Delete(FormMain.gameFolder + "enblensmask_square03.bmp");
             FuncFiles.Delete(FormMain.gameFolder + "enblocal.ini");
             FuncFiles.Delete(FormMain.gameFolder + "enblocalization.xml");
-            FuncFiles.Delete(FormMain.gameFolder + "enblut1.png");
-            FuncFiles.Delete(FormMain.gameFolder + "enblut2.png");
-            FuncFiles.Delete(FormMain.gameFolder + "enblut3.png");
-            FuncFiles.Delete(FormMain.gameFolder + "enblut4.png");
-            FuncFiles.Delete(FormMain.gameFolder + "enblut5.png");
-            FuncFiles.Delete(FormMain.gameFolder + "enblut6.png");
-            FuncFiles.Delete(FormMain.gameFolder + "enblut7.png");
             FuncFiles.Delete(FormMain.gameFolder + "enbpalette.bmp");
             FuncFiles.Delete(FormMain.gameFolder + "enbpalette.png");
             FuncFiles.Delete(FormMain.gameFolder + "enbraindrops.tga");
             FuncFiles.Delete(FormMain.gameFolder + "enbseries");
-            FuncFiles.Delete(FormMain.gameFolder + "enbseries.dll");
             FuncFiles.Delete(FormMain.gameFolder + "enbseries.ini");
-            FuncFiles.Delete(FormMain.gameFolder + "enbseries_Dense Mist_Default.ini");
-            FuncFiles.Delete(FormMain.gameFolder + "enbseries_Subtle Mist.ini");
-            FuncFiles.Delete(FormMain.gameFolder + "enbseries_mastereffect.ini");
             FuncFiles.Delete(FormMain.gameFolder + "enbspectrum.bmp");
             FuncFiles.Delete(FormMain.gameFolder + "enbsunsprite.fx");
             FuncFiles.Delete(FormMain.gameFolder + "enbsunsprite.fx.ini");
             FuncFiles.Delete(FormMain.gameFolder + "enbsunsprite.tga");
-            FuncFiles.Delete(FormMain.gameFolder + "enbsunsprite_Additional.tga");
-            FuncFiles.Delete(FormMain.gameFolder + "enbsunsprite_Additional_2.tga");
-            FuncFiles.Delete(FormMain.gameFolder + "enbsunsprite_Chroma_Lens.tga");
-            FuncFiles.Delete(FormMain.gameFolder + "enbsunsprite_Colored_Hexagons.tga");
-            FuncFiles.Delete(FormMain.gameFolder + "enbsunsprite_Exotic_Low_Sprites.tga");
-            FuncFiles.Delete(FormMain.gameFolder + "enbsunsprite_High Dispersion.tga");
-            FuncFiles.Delete(FormMain.gameFolder + "enbsunsprite_Low Dispersion.tga");
-            FuncFiles.Delete(FormMain.gameFolder + "enbsunsprite_MoonSprite.tga");
-            FuncFiles.Delete(FormMain.gameFolder + "enbsunsprite_Octagon_Nova_Glare.tga");
-            FuncFiles.Delete(FormMain.gameFolder + "enbsunsprite_Pentagons_Medium_Sprites.tga");
-            FuncFiles.Delete(FormMain.gameFolder + "enbsunsprite_Rotated.tga");
-            FuncFiles.Delete(FormMain.gameFolder + "enbsunsprite_Simple_Hexagons.tga");
             FuncFiles.Delete(FormMain.gameFolder + "enbweather.bmp");
             FuncFiles.Delete(FormMain.gameFolder + "injFX_Settings.h");
             FuncFiles.Delete(FormMain.gameFolder + "injFX_Shaders");
@@ -545,14 +465,14 @@ namespace SLMPLauncher
             FuncFiles.Delete(FormMain.gameFolder + "sweetfx_d3d9.dll");
             FuncFiles.Delete(FormMain.gameFolder + "technique.fxh");
             FuncFiles.Delete(FormMain.gameFolder + "volumetric_mist_anchors.xml");
-            FuncFiles.Delete(FormMain.gameFolder + @"Data\ENBvision.bsa");
-            FuncFiles.Delete(FormMain.gameFolder + @"Data\ENBvision.esp");
+            FuncFiles.Delete(FormMain.gameFolder + @"Data\ENB Night Vision.bsa");
+            FuncFiles.Delete(FormMain.gameFolder + @"Data\ENB Night Vision.esp");
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         public static void OSA()
         {
-            FuncFiles.Delete(FormMain.gameFolder + @"Data\OSAsex.esp");
-            FuncFiles.Delete(FormMain.gameFolder + @"Data\OSAsex.bsa");
+            FuncFiles.Delete(FormMain.gameFolder + @"Data\OSA.esm");
+            FuncFiles.Delete(FormMain.gameFolder + @"Data\OSA.bsa");
             FuncFiles.Delete(FormMain.gameFolder + @"Data\Naked.esp");
             FuncFiles.Delete(FormMain.gameFolder + @"Data\Naked.bsa");
             FuncFiles.Delete(FormMain.gameFolder + @"Data\SKSE\Plugins\CPConvert.dll");
@@ -578,8 +498,9 @@ namespace SLMPLauncher
             FuncFiles.Delete(FormMain.gameFolder + @"Data\Meshes\Actors\Character\Behaviors\FNIS_0Sex_0MF_U_Behavior.hkx");
             FuncFiles.Delete(FormMain.gameFolder + @"Data\Meshes\Actors\Character\Behaviors\FNIS_0Sex_EMF_A_Behavior.hkx");
         }
-        public static void TUNIC()
+        public static void TUN()
         {
+            FuncFiles.Delete(FormMain.gameFolder + @"Data\Meshes\Armor\Tails");
             FuncFiles.Delete(FormMain.gameFolder + @"Data\Tunic.esp");
             FuncFiles.Delete(FormMain.gameFolder + @"Data\Tunic.bsa");
             FuncFiles.Delete(FormMain.gameFolder + @"Data\NIOVHH.esp");
@@ -615,11 +536,17 @@ namespace SLMPLauncher
             FuncFiles.Delete(FormMain.gameFolder + @"Data\Ordinator.esp");
             FuncFiles.Delete(FormMain.gameFolder + @"Data\Ordinator.bsa");
         }
-        public static void ET()
+        public static void UP()
         {
-            FuncFiles.Delete(FormMain.gameFolder + @"Data\EarsTails.esp");
-            FuncFiles.Delete(FormMain.gameFolder + @"Data\EarsTails.bsa");
-            FuncFiles.Delete(FormMain.gameFolder + @"Data\Meshes\Armor\Tails");
+            FuncFiles.Delete(FormMain.gameFolder + @"Data\SKSE\Plugins\SkyrimSouls.dll");
+            FuncFiles.Delete(FormMain.gameFolder + @"Data\SKSE\Plugins\SkyrimSouls.ini");
+        }
+        public static void CAM()
+        {
+            FuncFiles.Delete(FormMain.gameFolder + @"Data\CameraScripts");
+            FuncFiles.Delete(FormMain.gameFolder + @"Data\SKSE\Plugins\CameraScripter.dll");
+            FuncFiles.Delete(FormMain.gameFolder + @"Data\CameraScripter.esp");
+            FuncFiles.Delete(FormMain.gameFolder + @"Data\CameraScripter.bsa");
         }
     }
 }

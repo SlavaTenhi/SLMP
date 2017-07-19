@@ -19,6 +19,17 @@ namespace SLMPLauncher
         string shadowResolution = "Изменение самого \"тяжелого\" параметра теней.";
         string grassDensity = "Расстояние между кустами травы, чем оно меньше, тем плотнее трава.";
         string weaponFavorite = "Отображение на персонаже оружия находящегося в категории избранного.";
+        string redateMods = "Массовое изменение даты изменения файлов по возрастанию.";
+        string errorWriteFile = "Не удалось записать файл: ";
+        string errorDateChange = "Не удалось изменить дату изменения файла: ";
+        string errorSystemInfo = "Программе не удалось получить сведения о системе.";
+        string setHightSettings = "Установлены Высокие настройки.";
+        string setMediumSettings = "Установлены Средние настройки.";
+        string setLowSettings = "Установлены Низкие настройки.";
+        string changeCardIndex = "Изменить индекс видеоадаптера? Игра не запуститься если его там не окажется.";
+        string confirmTitle = "Подтверждение";
+        string installRuFiles = "Установить Русскую озвучку?";
+        string installEnFiles = "Установить Английскую озвучку?";
         List<int> screenListW = new List<int>();
         List<int> screenListH = new List<int>();
         List<string> filesDataES = new List<string>();
@@ -46,6 +57,10 @@ namespace SLMPLauncher
             {
                 imageBackgroundImage();
             }
+            if (FormMain.langTranslate != "RU")
+            {
+                LangTranslateEN();
+            }
             toolTip1.SetToolTip(label14, indexAdapter);
             toolTip1.SetToolTip(comboBoxAdapterIndex, indexAdapter);
             toolTip1.SetToolTip(label20, shadowResolution);
@@ -55,7 +70,7 @@ namespace SLMPLauncher
             toolTip1.SetToolTip(trackBarGrass, grassDensity);
             toolTip1.SetToolTip(label2, weaponFavorite);
             toolTip1.SetToolTip(buttonToggleWeapons, weaponFavorite);
-            toolTip1.SetToolTip(buttonRedateMods, "Массовое изменение даты изменения файлов по возрастанию.");
+            toolTip1.SetToolTip(buttonRedateMods, redateMods);
             refrashSettings();
             refreshModsList();
             currentFileList.AddRange(Directory.GetFiles(dataFolder).Select(f => f.Substring((dataFolder).Length)));
@@ -64,7 +79,107 @@ namespace SLMPLauncher
         private void imageBackgroundImage()
         {
             BackgroundImage = Properties.Resources.FormBackground;
-            FuncMisc.LabelsTextColor(this, System.Drawing.SystemColors.ControlLight, System.Drawing.Color.FromArgb(30, 30, 30));
+            FuncMisc.LabelsTextColor(this, System.Drawing.SystemColors.ControlLight, System.Drawing.Color.FromArgb(30, 30, 30), false);
+        }
+        private void LangTranslateEN()
+        {
+            indexAdapter = "Change the index of the video adapter, if you want to run it on another video card.";
+            shadowResolution = "Changing the \"heaviest\" shadow parameter.";
+            grassDensity = "The distance between the grass bushes, the smaller it is, the denser the grass.";
+            weaponFavorite = "Displaying a weapon in the category of favorites on the character.";
+            redateMods = "Mass change of the date of change of files in ascending order.";
+            label2.Text = "Equip Favorites";
+            label5.Text = "Papyrus logs";
+            buttonLogsFolder.Text = "Logs folder";
+            label7.Text = "Master files:";
+            buttonRedateMods.Text = "Redate mods";
+            buttonActivatedAll.Text = "Enable all";
+            label12.Text = "Mods On/All:";
+            buttonRestore.Text = "Restore";
+            comboBoxAspect.Items.Clear();
+            comboBoxAspect.Items.AddRange(new object[] {
+            "Wide-screen 21:9",
+            "Wide-screen 16:10",
+            "Wide-screen 16:9",
+            "Standard 5:4",
+            "Standard 4:3"});
+            label6.Text = "Resolution";
+            buttonLow.Text = "Low";
+            buttonMedium.Text = "Medium";
+            buttonHight.Text = "Hight";
+            buttonUltra.Text = "Ultra";
+            label13.Text = "Presets";
+            buttonAdvancedSettings.Text = "Common";
+            buttonDistance.Text = "Distances";
+            label14.Text = "Card index";
+            label15.Text = "Window mode";
+            label16.Text = "V-Sync";
+            label17.Text = "Antialiasing";
+            comboBoxAA.Items.Clear();
+            comboBoxAA.Items.AddRange(new object[] {
+            "Off.",
+            "2 x",
+            "4 x",
+            "8 x"});
+            comboBoxAF.Items.Clear();
+            comboBoxAF.Items.AddRange(new object[] {
+            "Off.",
+            "2 x",
+            "4 x",
+            "8 x",
+            "16 x"});
+            label18.Text = "Filtration";
+            label19.Text = "Antialiasing FXAA";
+            label20.Text = "Shadow Resolution";
+            label21.Text = "Grass density:";
+            label23.Text = "Water reflections";
+            checkBoxReflectSky.Text = "Sky";
+            checkBoxReflectLand.Text = "Landscape";
+            checkBoxReflectObjects.Text = "Objects";
+            checkBoxReflectTrees.Text = "Trees";
+            label24.Text = "Textures quality";
+            comboBoxTextures.Items.Clear();
+            comboBoxTextures.Items.AddRange(new object[] {
+            "Low",
+            "Medium",
+            "Hight"});
+            label25.Text = "Shadow";
+            comboBoxShadowRange.Items.Clear();
+            comboBoxShadowRange.Items.AddRange(new object[] {
+            "Low",
+            "Medium",
+            "Hight",
+            "Ultra"});
+            label26.Text = "Particles";
+            comboBoxDecals.Items.Clear();
+            comboBoxDecals.Items.AddRange(new object[] {
+            "No",
+            "Medium",
+            "Hight",
+            "Ultra"});
+            label1.Text = "Grass:";
+            label4.Text = "Objects:";
+            label28.Text = "Items:";
+            label30.Text = "Characters:";
+            label32.Text = "Lighting:";
+            comboBoxLODObjects.Items.Clear();
+            comboBoxLODObjects.Items.AddRange(new object[] {
+            "Low",
+            "Medium",
+            "Hight",
+            "Ultra"});
+            label34.Text = "Remote objects";
+            label35.Text = "Disappearance of remote objects";
+            errorWriteFile = "Could not write file: ";
+            errorDateChange = "Could not change the date the file was modified.: ";
+            errorSystemInfo = "The program could not retrieve system information.";
+            setHightSettings = "High settings are set.";
+            setMediumSettings = "Medium settings are set.";
+            setLowSettings = "Low settings are set.";
+            changeCardIndex = "Change the video adapter index? The game does not start if it is not there.";
+            confirmTitle = "Confirm";
+            installRuFiles = "Install Russian voice files?";
+            installEnFiles = "Install English voice files?";
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void refrashSettings()
@@ -79,7 +194,10 @@ namespace SLMPLauncher
             refrashFXAA();
             refrashGrass();
             refrashShadow();
-            refrashWater();
+            refrashWaterReflectSky();
+            refrashWaterReflectLand();
+            refrashWaterReflectObjects();
+            refrashWaterReflectTrees();
             refrashDecals();
             refrashLights();
             refrashActors();
@@ -92,71 +210,6 @@ namespace SLMPLauncher
             refrashShadowRange();
             refrashGrassDistance();
             refreshScreenResolution(FuncParser.intRead(FormMain.iniSkyrimPrefs, "Display", "iSize W"), FuncParser.intRead(FormMain.iniSkyrimPrefs, "Display", "iSize H"), false);
-        }
-        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
-        private void buttonToggleWeapons_Click(object sender, EventArgs e)
-        {
-            if (weapons)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrim, "General", "bDisableGearedUp", "1");
-                refreshbuttonToggleWeapons();
-            }
-            else
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrim, "General", "bDisableGearedUp", "0");
-                refreshbuttonToggleWeapons();
-            }
-        }
-        private void refreshbuttonToggleWeapons()
-        {
-            weapons = FuncMisc.RefreshButton(buttonToggleWeapons, FormMain.iniSkyrim, "General", "bDisableGearedUp", null, true);
-        }
-        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
-        private void buttonPapyrus_Click(object sender, EventArgs e)
-        {
-            if (papyrus)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Papyrus", "bEnableLogging", "0");
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Papyrus", "bEnableTrace", "0");
-                refreshValueLabelPapyrus();
-            }
-            else
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Papyrus", "bEnableLogging", "1");
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Papyrus", "bEnableTrace", "1");
-                refreshValueLabelPapyrus();
-            }
-        }
-        private void refreshValueLabelPapyrus()
-        {
-            papyrus = FuncMisc.RefreshButton(buttonPapyrus, FormMain.iniSkyrim, "Papyrus", "bEnableLogging", null, false);
-            if (papyrus)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Papyrus", "bEnableTrace", "1");
-            }
-            else
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Papyrus", "bEnableTrace", "0");
-            }
-        }
-        private void buttonLogsFolder_Click(object sender, EventArgs e)
-        {
-            if (Directory.Exists(FormMain.myDocPath + @"Logs\"))
-            {
-                Process.Start(FormMain.myDocPath + @"Logs\");
-            }
-            else if (Directory.Exists(FormMain.myDocPath))
-            {
-                Process.Start(FormMain.myDocPath);
-            }
-            else if (Directory.Exists(FormMain.myDocPath + @"..\"))
-            {
-                Process.Start(FormMain.myDocPath + @"..\");
-            }
-            else if (Directory.Exists(FormMain.myDocPath + @"..\..\"))
-            {
-                Process.Start(FormMain.myDocPath + @"..\..\");
-            }
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void checkedListBox1_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -213,7 +266,10 @@ namespace SLMPLauncher
                 }
             }
             listBox1.Items.Clear();
-            listBox1.Items.AddRange(FuncParser.parserESPESM(dataFolder + checkedListBox1.SelectedItem.ToString()).ToArray());
+            if (checkedListBox1.SelectedIndex != -1)
+            {
+                listBox1.Items.AddRange(FuncParser.parserESPESM(dataFolder + checkedListBox1.SelectedItem.ToString()).ToArray());
+            }
         }
         private void inserItem(int index1, int index2)
         {
@@ -404,7 +460,7 @@ namespace SLMPLauncher
             }
             catch
             {
-                MessageBox.Show("Не удалось записать файл: " + pathToPlugins);
+                MessageBox.Show(errorWriteFile + pathToPlugins);
             }
         }
         private void labelsRefresh()
@@ -441,12 +497,33 @@ namespace SLMPLauncher
                         }
                         catch
                         {
-                            MessageBox.Show("не удалось изменить дату изменения файла: " + dataFolder + checkedListBox1.Items[i].ToString());
+                            MessageBox.Show(errorDateChange + dataFolder + checkedListBox1.Items[i].ToString());
                         }
                         dt = dt.AddMinutes(1);
                     }
                 }
             }
+        }
+        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
+        private void buttonLow_Click(object sender, EventArgs e)
+        {
+            FuncSettings.LowPreset();
+            refrashSettings();
+        }
+        private void buttonMedium_Click(object sender, EventArgs e)
+        {
+            FuncSettings.MediumPreset();
+            refrashSettings();
+        }
+        private void buttonHight_Click(object sender, EventArgs e)
+        {
+            FuncSettings.HightPreset();
+            refrashSettings();
+        }
+        private void buttonUltra_Click(object sender, EventArgs e)
+        {
+            FuncSettings.UltraPreset();
+            refrashSettings();
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         public void resetSettings()
@@ -458,22 +535,22 @@ namespace SLMPLauncher
             }
             catch
             {
-                MessageBox.Show("Программе не удалось получить сведения о системе.");
+                MessageBox.Show(errorSystemInfo);
             }
             if (rambyte > 8000)
             {
                 FuncSettings.HightPreset();
-                MessageBox.Show("Установлены Высокие настройки.");
+                MessageBox.Show(setHightSettings);
             }
             else if (rambyte > 4000)
             {
                 FuncSettings.MediumPreset();
-                MessageBox.Show("Установлены Средние настройки.");
+                MessageBox.Show(setMediumSettings);
             }
             else
             {
                 FuncSettings.LowPreset();
-                MessageBox.Show("Установлены Низкие настройки.");
+                MessageBox.Show(setLowSettings);
             }
             refreshScreenResolution(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height, true);
         }
@@ -553,7 +630,7 @@ namespace SLMPLauncher
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void comboBoxAdapterIndex_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Изменить индекс видеоадаптера? Игра не запуститься если его там не окажется.", "Подтверждение", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show(changeCardIndex, confirmTitle, MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 FuncParser.iniWrite(FormMain.iniSkyrim, "Display", "iAdapter", comboBoxAdapterIndex.SelectedIndex.ToString());
@@ -607,25 +684,484 @@ namespace SLMPLauncher
             comboBoxAdapterIndex.SelectedIndexChanged += comboBoxAdapterIndex_SelectedIndexChanged;
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
-        private void buttonLow_Click(object sender, EventArgs e)
+        private void comboBoxAA_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FuncSettings.LowPreset();
-            refrashSettings();
+            if (comboBoxAA.SelectedIndex == 0)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMultiSample", "1");
+            }
+            else if (comboBoxAA.SelectedIndex == 1)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMultiSample", "2");
+            }
+            else if (comboBoxAA.SelectedIndex == 2)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMultiSample", "4");
+            }
+            else if (comboBoxAA.SelectedIndex == 3)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMultiSample", "8");
+            }
+            refrashAA();
         }
-        private void buttonMedium_Click(object sender, EventArgs e)
+        private void refrashAA()
         {
-            FuncSettings.MediumPreset();
-            refrashSettings();
+            FuncSettings.ENBCheck(false);
+            int aa = FuncParser.intRead(FormMain.iniSkyrimPrefs, "Display", "iMultiSample");
+            if (aa <= 1)
+            {
+                comboBoxAA.SelectedIndex = 0;
+            }
+            else if (aa <= 2)
+            {
+                comboBoxAA.SelectedIndex = 1;
+            }
+            else if (aa <= 4)
+            {
+                comboBoxAA.SelectedIndex = 2;
+            }
+            else if (aa > 4)
+            {
+                comboBoxAA.SelectedIndex = 3;
+            }
         }
-        private void buttonHight_Click(object sender, EventArgs e)
+        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
+        private void comboBoxAF_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FuncSettings.HightPreset();
-            refrashSettings();
+            if (comboBoxAF.SelectedIndex == 0)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMaxAnisotropy", "1");
+            }
+            else if (comboBoxAF.SelectedIndex == 1)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMaxAnisotropy", "2");
+            }
+            else if (comboBoxAF.SelectedIndex == 2)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMaxAnisotropy", "4");
+            }
+            else if (comboBoxAF.SelectedIndex == 3)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMaxAnisotropy", "8");
+            }
+            else if (comboBoxAF.SelectedIndex == 4)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMaxAnisotropy", "16");
+            }
+            refrashAF();
         }
-        private void buttonUltra_Click(object sender, EventArgs e)
+        private void refrashAF()
         {
-            FuncSettings.UltraPreset();
-            refrashSettings();
+            FuncSettings.ENBCheck(false);
+            int af = FuncParser.intRead(FormMain.iniSkyrimPrefs, "Display", "iMaxAnisotropy");
+            if (af <= 1)
+            {
+                comboBoxAF.SelectedIndex = 0;
+            }
+            else if (af <= 2)
+            {
+                comboBoxAF.SelectedIndex = 1;
+            }
+            else if (af <= 4)
+            {
+                comboBoxAF.SelectedIndex = 2;
+            }
+            else if (af <= 8)
+            {
+                comboBoxAF.SelectedIndex = 3;
+            }
+            else if (af > 8)
+            {
+                comboBoxAF.SelectedIndex = 4;
+            }
+        }
+        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
+        private void comboBoxShadowMap_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxShadowMap.SelectedIndex == 0)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iShadowMapResolution", "512");
+            }
+            else if (comboBoxShadowMap.SelectedIndex == 1)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iShadowMapResolution", "1024");
+            }
+            else if (comboBoxShadowMap.SelectedIndex == 2)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iShadowMapResolution", "2048");
+            }
+            else if (comboBoxShadowMap.SelectedIndex == 3)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iShadowMapResolution", "4096");
+            }
+            else if (comboBoxShadowMap.SelectedIndex == 4)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iShadowMapResolution", "8192");
+            }
+            refrashShadow();
+        }
+        private void refrashShadow()
+        {
+            int shadow = FuncParser.intRead(FormMain.iniSkyrimPrefs, "Display", "iShadowMapResolution");
+            if (shadow <= 512)
+            {
+                comboBoxShadowMap.SelectedIndex = 0;
+            }
+            else if (shadow <= 1024)
+            {
+                comboBoxShadowMap.SelectedIndex = 1;
+            }
+            else if (shadow <= 2048)
+            {
+                comboBoxShadowMap.SelectedIndex = 2;
+            }
+            else if (shadow <= 4096)
+            {
+                comboBoxShadowMap.SelectedIndex = 3;
+            }
+            else if (shadow > 4096)
+            {
+                comboBoxShadowMap.SelectedIndex = 4;
+            }
+        }
+        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
+        private void buttonShowWaterReflect_Click(object sender, EventArgs e)
+        {
+            if (checkBoxReflectSky.Visible)
+            {
+                checkBoxReflectSky.Visible = false;
+                checkBoxReflectLand.Visible = false;
+                checkBoxReflectObjects.Visible = false;
+                checkBoxReflectTrees.Visible = false;
+                label36.Visible = false;
+            }
+            else
+            {
+                checkBoxReflectSky.Visible = true;
+                checkBoxReflectLand.Visible = true;
+                checkBoxReflectObjects.Visible = true;
+                checkBoxReflectTrees.Visible = true;
+                label36.Visible = true;
+            }
+        }
+        private void checkBoxReflectSky_CheckedChanged(object sender, EventArgs e)
+        {
+            FuncParser.iniWrite(FormMain.iniSkyrim, "Water", "bReflectSky", Convert.ToInt32(checkBoxReflectSky.Checked).ToString());
+            refrashWaterReflectSky();
+        }
+        private void refrashWaterReflectSky()
+        {
+            checkBoxFunction(FuncParser.stringRead(FormMain.iniSkyrim, "Water", "bReflectSky") == "1", checkBoxReflectSky, labelRSky);
+        }
+        private void checkBoxReflectLand_CheckedChanged(object sender, EventArgs e)
+        {
+            FuncParser.iniWrite(FormMain.iniSkyrim, "Water", "bReflectLODLand", Convert.ToInt32(checkBoxReflectLand.Checked).ToString());
+            refrashWaterReflectLand();
+        }
+        private void refrashWaterReflectLand()
+        {
+            checkBoxFunction(FuncParser.stringRead(FormMain.iniSkyrim, "Water", "bReflectLODLand") == "1", checkBoxReflectLand, labelRLand);
+        }
+        private void checkBoxReflectObjects_CheckedChanged(object sender, EventArgs e)
+        {
+            FuncParser.iniWrite(FormMain.iniSkyrim, "Water", "bReflectLODObjects", Convert.ToInt32(checkBoxReflectObjects.Checked).ToString());
+            refrashWaterReflectObjects();
+        }
+        private void refrashWaterReflectObjects()
+        {
+            checkBoxFunction(FuncParser.stringRead(FormMain.iniSkyrim, "Water", "bReflectLODObjects") == "1", checkBoxReflectObjects, labelRObjects);
+        }
+        private void checkBoxReflectTrees_CheckedChanged(object sender, EventArgs e)
+        {
+            FuncParser.iniWrite(FormMain.iniSkyrim, "Water", "bReflectLODTrees", Convert.ToInt32(checkBoxReflectTrees.Checked).ToString());
+            refrashWaterReflectTrees();
+        }
+        private void refrashWaterReflectTrees()
+        {
+            checkBoxFunction(FuncParser.stringRead(FormMain.iniSkyrim, "Water", "bReflectLODTrees") == "1", checkBoxReflectTrees, labelRTrees);
+        }
+        private void checkBoxFunction(bool check, CheckBox box, Label label)
+        {
+            if (check)
+            {
+                box.Checked = true;
+                label.Text = "1";
+            }
+            else
+            {
+                box.Checked = false;
+                label.Text = "0";
+            }
+        }
+        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
+        private void comboBoxTextures_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxTextures.SelectedIndex == 0)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iTexMipMapSkip", "2");
+            }
+            else if (comboBoxTextures.SelectedIndex == 1)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iTexMipMapSkip", "1");
+            }
+            else if (comboBoxTextures.SelectedIndex == 2)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iTexMipMapSkip", "0");
+            }
+            refrashTextures();
+        }
+        private void refrashTextures()
+        {
+            int text = FuncParser.intRead(FormMain.iniSkyrimPrefs, "Display", "iTexMipMapSkip");
+            if (text <= 0)
+            {
+                comboBoxTextures.SelectedIndex = 2;
+            }
+            else if (text == 1)
+            {
+                comboBoxTextures.SelectedIndex = 1;
+            }
+            else if (text > 1)
+            {
+                comboBoxTextures.SelectedIndex = 0;
+            }
+        }
+        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
+        private void comboBoxShadowRange_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxShadowRange.SelectedIndex == 0)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iBlurDeferredShadowMask", "0");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fShadowDistance", "2000.0000");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fTreesMidLODSwitchDist", "3500.0000");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fShadowBiasScale", "0.5000");
+            }
+            else if (comboBoxShadowRange.SelectedIndex == 1)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iBlurDeferredShadowMask", "2");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fShadowDistance", "3500.0000");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fTreesMidLODSwitchDist", "5000.0000");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fShadowBiasScale", "0.3000");
+            }
+            else if (comboBoxShadowRange.SelectedIndex == 2)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iBlurDeferredShadowMask", "3");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fShadowDistance", "5000.0000");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fTreesMidLODSwitchDist", "10000.0000");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fShadowBiasScale", "0.2500");
+            }
+            else if (comboBoxShadowRange.SelectedIndex == 3)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iBlurDeferredShadowMask", "3");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fShadowDistance", "8000.0000");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fTreesMidLODSwitchDist", "10000000.0000");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fShadowBiasScale", "0.1500");
+            }
+            refrashShadowRange();
+            refrashShadow();
+        }
+        private void refrashShadowRange()
+        {
+            int dist = FuncParser.intRead(FormMain.iniSkyrimPrefs, "Display", "fShadowDistance");
+            if (dist <= 2000)
+            {
+                comboBoxShadowRange.SelectedIndex = 0;
+            }
+            else if (dist <= 3500)
+            {
+                comboBoxShadowRange.SelectedIndex = 1;
+            }
+            else if (dist <= 5000)
+            {
+                comboBoxShadowRange.SelectedIndex = 2;
+            }
+            else if (dist > 5000)
+            {
+                comboBoxShadowRange.SelectedIndex = 3;
+            }
+        }
+        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
+        private void comboBoxDecals_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxDecals.SelectedIndex == 0)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrim, "Decals", "bDecals", "0");
+                FuncParser.iniWrite(FormMain.iniSkyrim, "Decals", "bSkinnedDecals", "0");
+                FuncParser.iniWrite(FormMain.iniSkyrim, "Decals", "uMaxSkinDecals", "0");
+                FuncParser.iniWrite(FormMain.iniSkyrim, "Decals", "uMaxSkinDecalsPerActor", "0");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMaxDecalsPerFrame", "0");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMaxSkinDecalsPerFrame", "0");
+            }
+            else if (comboBoxDecals.SelectedIndex == 1)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrim, "Decals", "bDecals", "1");
+                FuncParser.iniWrite(FormMain.iniSkyrim, "Decals", "bSkinnedDecals", "1");
+                FuncParser.iniWrite(FormMain.iniSkyrim, "Decals", "uMaxSkinDecals", "35");
+                FuncParser.iniWrite(FormMain.iniSkyrim, "Decals", "uMaxSkinDecalsPerActor", "20");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMaxDecalsPerFrame", "10");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMaxSkinDecalsPerFrame", "3");
+            }
+            else if (comboBoxDecals.SelectedIndex == 2)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrim, "Decals", "bDecals", "1");
+                FuncParser.iniWrite(FormMain.iniSkyrim, "Decals", "bSkinnedDecals", "1");
+                FuncParser.iniWrite(FormMain.iniSkyrim, "Decals", "uMaxSkinDecals", "50");
+                FuncParser.iniWrite(FormMain.iniSkyrim, "Decals", "uMaxSkinDecalsPerActor", "40");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMaxDecalsPerFrame", "30");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMaxSkinDecalsPerFrame", "10");
+            }
+            else if (comboBoxDecals.SelectedIndex == 3)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrim, "Decals", "bDecals", "1");
+                FuncParser.iniWrite(FormMain.iniSkyrim, "Decals", "bSkinnedDecals", "1");
+                FuncParser.iniWrite(FormMain.iniSkyrim, "Decals", "uMaxSkinDecals", "100");
+                FuncParser.iniWrite(FormMain.iniSkyrim, "Decals", "uMaxSkinDecalsPerActor", "60");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMaxDecalsPerFrame", "100");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMaxSkinDecalsPerFrame", "25");
+            }
+            refrashDecals();
+        }
+        private void refrashDecals()
+        {
+            int decal = FuncParser.intRead(FormMain.iniSkyrimPrefs, "Display", "iMaxDecalsPerFrame");
+            if (decal <= 0)
+            {
+                comboBoxDecals.SelectedIndex = 0;
+            }
+            else if (decal <= 10)
+            {
+                comboBoxDecals.SelectedIndex = 1;
+            }
+            else if (decal <= 30)
+            {
+                comboBoxDecals.SelectedIndex = 2;
+            }
+            else if (decal > 30)
+            {
+                comboBoxDecals.SelectedIndex = 3;
+            }
+        }
+        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
+        private void comboBoxLODObjects_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxLODObjects.SelectedIndex == 0)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fTreeLoadDistance", "12500.0000");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fBlockMaximumDistance", "75000.0000");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fBlockLevel1Distance", "25000.0000");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fBlockLevel0Distance", "15000.0000");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fSplitDistanceMult", "0.4000");
+            }
+            else if (comboBoxLODObjects.SelectedIndex == 1)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fTreeLoadDistance", "25000.0000");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fBlockMaximumDistance", "100000.0000");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fBlockLevel1Distance", "32768.0000");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fBlockLevel0Distance", "20480.0000");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fSplitDistanceMult", "0.7500");
+            }
+            else if (comboBoxLODObjects.SelectedIndex == 2)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fTreeLoadDistance", "40000.0000");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fBlockMaximumDistance", "150000.0000");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fBlockLevel1Distance", "40000.0000");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fBlockLevel0Distance", "25000.0000");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fSplitDistanceMult", "1.1000");
+            }
+            else if (comboBoxLODObjects.SelectedIndex == 3)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fTreeLoadDistance", "75000.0000");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fBlockMaximumDistance", "250000.0000");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fBlockLevel1Distance", "70000.0000");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fBlockLevel0Distance", "35000.0000");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fSplitDistanceMult", "1.5000");
+            }
+            refrashLODObjects();
+        }
+        private void refrashLODObjects()
+        {
+            int objects = FuncParser.intRead(FormMain.iniSkyrimPrefs, "TerrainManager", "fTreeLoadDistance");
+            if (objects <= 12500)
+            {
+                comboBoxLODObjects.SelectedIndex = 0;
+            }
+            else if (objects <= 25000)
+            {
+                comboBoxLODObjects.SelectedIndex = 1;
+            }
+            else if (objects <= 40000)
+            {
+                comboBoxLODObjects.SelectedIndex = 2;
+            }
+            else if (objects > 40000)
+            {
+                comboBoxLODObjects.SelectedIndex = 3;
+            }
+        }
+        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
+        private void buttonToggleWeapons_Click(object sender, EventArgs e)
+        {
+            if (weapons)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrim, "General", "bDisableGearedUp", "1");
+                refreshbuttonToggleWeapons();
+            }
+            else
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrim, "General", "bDisableGearedUp", "0");
+                refreshbuttonToggleWeapons();
+            }
+        }
+        private void refreshbuttonToggleWeapons()
+        {
+            weapons = FuncMisc.RefreshButton(buttonToggleWeapons, FormMain.iniSkyrim, "General", "bDisableGearedUp", null, true);
+        }
+        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
+        private void buttonPapyrus_Click(object sender, EventArgs e)
+        {
+            if (papyrus)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrim, "Papyrus", "bEnableLogging", "0");
+                FuncParser.iniWrite(FormMain.iniSkyrim, "Papyrus", "bEnableTrace", "0");
+                refreshValueLabelPapyrus();
+            }
+            else
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrim, "Papyrus", "bEnableLogging", "1");
+                FuncParser.iniWrite(FormMain.iniSkyrim, "Papyrus", "bEnableTrace", "1");
+                refreshValueLabelPapyrus();
+            }
+        }
+        private void refreshValueLabelPapyrus()
+        {
+            papyrus = FuncMisc.RefreshButton(buttonPapyrus, FormMain.iniSkyrim, "Papyrus", "bEnableLogging", null, false);
+            if (papyrus)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrim, "Papyrus", "bEnableTrace", "1");
+            }
+            else
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrim, "Papyrus", "bEnableTrace", "0");
+            }
+        }
+        private void buttonLogsFolder_Click(object sender, EventArgs e)
+        {
+            if (Directory.Exists(FormMain.myDocPath + @"Logs\"))
+            {
+                Process.Start(FormMain.myDocPath + @"Logs\");
+            }
+            else if (Directory.Exists(FormMain.myDocPath))
+            {
+                Process.Start(FormMain.myDocPath);
+            }
+            else if (Directory.Exists(FormMain.myDocPath + @"..\"))
+            {
+                Process.Start(FormMain.myDocPath + @"..\");
+            }
+            else if (Directory.Exists(FormMain.myDocPath + @"..\..\"))
+            {
+                Process.Start(FormMain.myDocPath + @"..\..\");
+            }
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void buttonWindow_Click(object sender, EventArgs e)
@@ -666,6 +1202,179 @@ namespace SLMPLauncher
             vsync = FuncMisc.RefreshButton(buttonVsync, FormMain.iniSkyrim, "Display", "iPresentInterval", null, false);
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
+        private void buttonFXAA_Click(object sender, EventArgs e)
+        {
+            if (fxaa)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "bFXAAEnabled", "0");
+                refrashFXAA();
+            }
+            else
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "bFXAAEnabled", "1");
+                refrashFXAA();
+            }
+        }
+        private void refrashFXAA()
+        {
+            FuncSettings.ENBCheck(false);
+            fxaa = FuncMisc.RefreshButton(buttonFXAA, FormMain.iniSkyrimPrefs, "Display", "bFXAAEnabled", null, false);
+        }
+        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
+        private void buttonHideObjects_Click(object sender, EventArgs e)
+        {
+            if (hideobjects)
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fMeshLODLevel2FadeDist", "10000000.0000");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fMeshLODLevel1FadeDist", "10000000.0000");
+            }
+            else
+            {
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fMeshLODLevel2FadeDist", "5000.0000");
+                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fMeshLODLevel1FadeDist", "5000.0000");
+            }
+            refreshHideObjects();
+        }
+        private void refreshHideObjects()
+        {
+            int objects = FuncParser.intRead(FormMain.iniSkyrimPrefs, "Display", "fMeshLODLevel1FadeDist");
+            if (objects >= 10000000)
+            {
+                buttonHideObjects.BackgroundImage = Properties.Resources.buttonToggleOff;
+                hideobjects = false;
+            }
+            else
+            {
+                buttonHideObjects.BackgroundImage = Properties.Resources.buttonToggleOn;
+                hideobjects = true;
+            }
+        }
+        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
+        private void trackBarGrass_Scroll(object sender, EventArgs e)
+        {
+
+            FuncParser.iniWrite(FormMain.iniSkyrim, "Grass", "iMinGrassSize", (trackBarGrass.Value * 5).ToString());
+            refrashGrass();
+        }
+        private void refrashGrass()
+        {
+            FuncMisc.RefreshTrackBar(trackBarGrass, FormMain.iniSkyrim, "Grass", "iMinGrassSize", 5, label22);
+        }
+        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
+        private void trackBarGrassDistance_Scroll(object sender, EventArgs e)
+        {
+            FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Grass", "fGrassStartFadeDistance", (trackBarGrassDistance.Value * 1000).ToString());
+            refrashGrassDistance();
+        }
+        private void refrashGrassDistance()
+        {
+            FuncMisc.RefreshTrackBar(trackBarGrassDistance, FormMain.iniSkyrimPrefs, "Grass", "fGrassStartFadeDistance", 1000, label3);
+        }
+        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
+        private void trackBarObjects_Scroll(object sender, EventArgs e)
+        {
+            FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "LOD", "fLODFadeOutMultObjects", (trackBarObjects.Value).ToString());
+            refrashObjects();
+        }
+        private void refrashObjects()
+        {
+            FuncMisc.RefreshTrackBar(trackBarObjects, FormMain.iniSkyrimPrefs, "LOD", "fLODFadeOutMultObjects", -1, label27);
+        }
+        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
+        private void trackBarItems_Scroll(object sender, EventArgs e)
+        {
+            FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "LOD", "fLODFadeOutMultItems", (trackBarItems.Value).ToString());
+            refrashItems();
+        }
+        private void refrashItems()
+        {
+            FuncMisc.RefreshTrackBar(trackBarItems, FormMain.iniSkyrimPrefs, "LOD", "fLODFadeOutMultItems", -1, label29);
+        }
+        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
+        private void trackBarActors_Scroll(object sender, EventArgs e)
+        {
+            FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "LOD", "fLODFadeOutMultActors", (trackBarActors.Value).ToString());
+            refrashActors();
+        }
+        private void refrashActors()
+        {
+            FuncMisc.RefreshTrackBar(trackBarActors, FormMain.iniSkyrimPrefs, "LOD", "fLODFadeOutMultActors", -1, label31);
+        }
+        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
+        private void trackBarLights_Scroll(object sender, EventArgs e)
+        {
+            FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fLightLODStartFade", (trackBarLights.Value * 100).ToString());
+            refrashLights();
+        }
+        private void refrashLights()
+        {
+            FuncMisc.RefreshTrackBar(trackBarLights, FormMain.iniSkyrimPrefs, "Display", "fLightLODStartFade", 100, label33);
+        }
+        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            QuestionResul(installRuFiles, ruLocation, enLocation);
+        }
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            QuestionResul(installEnFiles, enLocation, ruLocation);
+        }
+        private void QuestionResul(string question, string path1, string path2)
+        {
+            DialogResult dialogResult = MessageBox.Show(question, confirmTitle, MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                MoveVoicesFiles(path1, path2);
+            }
+        }
+        private void MoveVoicesFiles(string path1, string path2)
+        {
+            List<string> path2Files = Directory.GetFiles(path2, filesType).Select(f => f.Substring((path2).Length)).ToList();
+            foreach (string line in Directory.GetFiles(path1, filesType).Select(f => f.Substring((path1).Length)).ToList())
+            {
+                if (path2Files.Contains(line))
+                {
+                    FuncFiles.Delete(FormMain.gameFolder + @"Data\" + line);
+                    FuncFiles.MoveAnyFiles(path1 + line, FormMain.gameFolder + @"Data\" + line);
+                }
+                else
+                {
+                    FuncFiles.MoveAnyFiles(FormMain.gameFolder + @"Data\" + line, path2 + line);
+                    FuncFiles.MoveAnyFiles(path1 + line, FormMain.gameFolder + @"Data\" + line);
+                }
+            }
+            refreshLangButton();
+        }
+        private void refreshLangButton()
+        {
+            if (Directory.Exists(ruLocation))
+            {
+                if (Directory.GetFiles(ruLocation, filesType).ToList().Count > 0)
+                {
+                    pictureBox1.Enabled = true;
+                    pictureBox1.BackgroundImage = Properties.Resources.RU;
+                }
+                else
+                {
+                    pictureBox1.Enabled = false;
+                    pictureBox1.BackgroundImage = Properties.Resources.RUoff;
+                }
+            }
+            if (Directory.Exists(enLocation))
+            {
+                if (Directory.GetFiles(enLocation, filesType).ToList().Count > 0)
+                {
+                    pictureBox2.Enabled = true;
+                    pictureBox2.BackgroundImage = Properties.Resources.EN;
+                }
+                else
+                {
+                    pictureBox2.Enabled = false;
+                    pictureBox2.BackgroundImage = Properties.Resources.ENoff;
+                }
+            }
+        }
+        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void buttonAdvancedSettings_Click(object sender, EventArgs e)
         {
             buttonDistance.Enabled = true;
@@ -686,7 +1395,11 @@ namespace SLMPLauncher
             label22.Visible = true;
             trackBarGrass.Visible = true;
             label23.Visible = true;
-            comboBoxWaterReflect.Visible = true;
+            buttonShowWaterReflect.Visible = true;
+            labelRTrees.Visible = true;
+            labelRObjects.Visible = true;
+            labelRLand.Visible = true;
+            labelRSky.Visible = true;
             label6.Visible = true;
             comboBoxAspect.Visible = true;
             comboBoxResolution.Visible = true;
@@ -741,7 +1454,16 @@ namespace SLMPLauncher
             label22.Visible = false;
             trackBarGrass.Visible = false;
             label23.Visible = false;
-            comboBoxWaterReflect.Visible = false;
+            checkBoxReflectSky.Visible = false;
+            checkBoxReflectLand.Visible = false;
+            checkBoxReflectObjects.Visible = false;
+            checkBoxReflectTrees.Visible = false;
+            label36.Visible = false;
+            buttonShowWaterReflect.Visible = false;
+            labelRTrees.Visible = false;
+            labelRObjects.Visible = false;
+            labelRLand.Visible = false;
+            labelRSky.Visible = false;
             label6.Visible = false;
             comboBoxAspect.Visible = false;
             comboBoxResolution.Visible = false;
@@ -775,582 +1497,6 @@ namespace SLMPLauncher
             comboBoxLODObjects.Visible = true;
             label35.Visible = true;
             buttonHideObjects.Visible = true;
-        }
-        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
-        private void comboBoxAA_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBoxAA.SelectedIndex == 0)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMultiSample", "1");
-            }
-            else if (comboBoxAA.SelectedIndex == 1)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMultiSample", "2");
-            }
-            else if (comboBoxAA.SelectedIndex == 2)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMultiSample", "4");
-            }
-            else if (comboBoxAA.SelectedIndex == 3)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMultiSample", "8");
-            }
-            refrashAA();
-        }
-        private void refrashAA()
-        {
-            FuncSettings.ENBCheck(false);
-            int aa = FuncParser.intRead(FormMain.iniSkyrimPrefs, "Display", "iMultiSample");
-            if (aa <= 1)
-            {
-                comboBoxAA.SelectedIndex = 0;
-            }
-            else if (aa <= 2)
-            {
-                comboBoxAA.SelectedIndex = 1;
-            }
-            else if (aa <= 4 && aa < 8)
-            {
-                comboBoxAA.SelectedIndex = 2;
-            }
-            else if (aa >= 8)
-            {
-                comboBoxAA.SelectedIndex = 3;
-            }
-        }
-        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
-        private void comboBoxAF_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBoxAF.SelectedIndex == 0)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMaxAnisotropy", "1");
-            }
-            else if (comboBoxAF.SelectedIndex == 1)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMaxAnisotropy", "2");
-            }
-            else if (comboBoxAF.SelectedIndex == 2)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMaxAnisotropy", "4");
-            }
-            else if (comboBoxAF.SelectedIndex == 3)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMaxAnisotropy", "8");
-            }
-            else if (comboBoxAF.SelectedIndex == 4)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMaxAnisotropy", "16");
-            }
-            refrashAF();
-        }
-        private void refrashAF()
-        {
-            FuncSettings.ENBCheck(false);
-            int af = FuncParser.intRead(FormMain.iniSkyrimPrefs, "Display", "iMaxAnisotropy");
-            if (af <= 1)
-            {
-                comboBoxAF.SelectedIndex = 0;
-            }
-            else if (af <= 2)
-            {
-                comboBoxAF.SelectedIndex = 1;
-            }
-            else if (af <= 4)
-            {
-                comboBoxAF.SelectedIndex = 2;
-            }
-            else if (af <= 8 && af < 16)
-            {
-                comboBoxAF.SelectedIndex = 3;
-            }
-            else if (af >= 16)
-            {
-                comboBoxAF.SelectedIndex = 4;
-            }
-        }
-        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
-        private void buttonFXAA_Click(object sender, EventArgs e)
-        {
-            if (fxaa)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "bFXAAEnabled", "0");
-                refrashFXAA();
-            }
-            else
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "bFXAAEnabled", "1");
-                refrashFXAA();
-            }
-        }
-        private void refrashFXAA()
-        {
-            FuncSettings.ENBCheck(false);
-            fxaa = FuncMisc.RefreshButton(buttonFXAA, FormMain.iniSkyrimPrefs, "Display", "bFXAAEnabled", null, false);
-        }
-        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
-        private void trackBarGrass_Scroll(object sender, EventArgs e)
-        {
-
-            FuncParser.iniWrite(FormMain.iniSkyrim, "Grass", "iMinGrassSize", (trackBarGrass.Value * 5).ToString());
-            refrashGrass();
-        }
-        private void refrashGrass()
-        {
-            FuncMisc.RefreshTrackBar(trackBarGrass, FormMain.iniSkyrim, "Grass", "iMinGrassSize", 5, label22);
-        }
-        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
-        private void comboBoxShadowMap_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBoxShadowMap.SelectedIndex == 0)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iShadowMapResolution", "512");
-            }
-            else if (comboBoxShadowMap.SelectedIndex == 1)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iShadowMapResolution", "1024");
-            }
-            else if (comboBoxShadowMap.SelectedIndex == 2)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iShadowMapResolution", "2048");
-            }
-            else if (comboBoxShadowMap.SelectedIndex == 3)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iShadowMapResolution", "4096");
-            }
-            else if (comboBoxShadowMap.SelectedIndex == 4)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iShadowMapResolution", "8192");
-            }
-            refrashShadow();
-        }
-        private void refrashShadow()
-        {
-            int shadow = FuncParser.intRead(FormMain.iniSkyrimPrefs, "Display", "iShadowMapResolution");
-            if (shadow <= 512)
-            {
-                comboBoxShadowMap.SelectedIndex = 0;
-            }
-            else if (shadow <= 1024)
-            {
-                comboBoxShadowMap.SelectedIndex = 1;
-            }
-            else if (shadow <= 2048)
-            {
-                comboBoxShadowMap.SelectedIndex = 2;
-            }
-            else if (shadow <= 4096 && shadow < 8192)
-            {
-                comboBoxShadowMap.SelectedIndex = 3;
-            }
-            else if (shadow >= 8192)
-            {
-                comboBoxShadowMap.SelectedIndex = 4;
-            }
-        }
-        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
-        private void comboBoxWaterReflect_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBoxWaterReflect.SelectedIndex == 0)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Water", "bReflectLODObjects", "0");
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Water", "bReflectLODLand", "0");
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Water", "bReflectSky", "0");
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Water", "bReflectLODTrees", "0");
-            }
-            else if (comboBoxWaterReflect.SelectedIndex == 1)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Water", "bReflectLODObjects", "0");
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Water", "bReflectLODLand", "0");
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Water", "bReflectSky", "1");
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Water", "bReflectLODTrees", "0");
-            }
-            else if (comboBoxWaterReflect.SelectedIndex == 2)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Water", "bReflectLODObjects", "0");
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Water", "bReflectLODLand", "1");
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Water", "bReflectSky", "1");
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Water", "bReflectLODTrees", "0");
-            }
-            else if (comboBoxWaterReflect.SelectedIndex == 3)
-            {
-
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Water", "bReflectLODObjects", "1");
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Water", "bReflectLODLand", "1");
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Water", "bReflectSky", "1");
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Water", "bReflectLODTrees", "0");
-            }
-            else if (comboBoxWaterReflect.SelectedIndex == 4)
-            {
-
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Water", "bReflectLODObjects", "1");
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Water", "bReflectLODLand", "1");
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Water", "bReflectSky", "1");
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Water", "bReflectLODTrees", "1");
-            }
-            refrashWater();
-        }
-        private void refrashWater()
-        {
-            if (FuncParser.stringRead(FormMain.iniSkyrim, "Water", "bReflectLODTrees") == "1")
-            {
-                comboBoxWaterReflect.SelectedIndex = 4;
-            }
-            else if (FuncParser.stringRead(FormMain.iniSkyrim, "Water", "bReflectLODObjects") == "1")
-            {
-                comboBoxWaterReflect.SelectedIndex = 3;
-            }
-            else if (FuncParser.stringRead(FormMain.iniSkyrim, "Water", "bReflectLODLand") == "1")
-            {
-                comboBoxWaterReflect.SelectedIndex = 2;
-            }
-            else if (FuncParser.stringRead(FormMain.iniSkyrim, "Water", "bReflectSky") == "1")
-            {
-                comboBoxWaterReflect.SelectedIndex = 1;
-            }
-            else
-            {
-                comboBoxWaterReflect.SelectedIndex = 0;
-            }
-        }
-        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
-        private void comboBoxTextures_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBoxTextures.SelectedIndex == 0)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iTexMipMapSkip", "2");
-            }
-            else if (comboBoxTextures.SelectedIndex == 1)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iTexMipMapSkip", "1");
-            }
-            else if (comboBoxTextures.SelectedIndex == 2)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iTexMipMapSkip", "0");
-            }
-            refrashTextures();
-        }
-        private void refrashTextures()
-        {
-            int text = FuncParser.intRead(FormMain.iniSkyrimPrefs, "Display", "iTexMipMapSkip");
-            if (text <= 0)
-            {
-                comboBoxTextures.SelectedIndex = 2;
-            }
-            else if (text == 1)
-            {
-                comboBoxTextures.SelectedIndex = 1;
-            }
-            else if (text >= 2)
-            {
-                comboBoxTextures.SelectedIndex = 0;
-            }
-        }
-        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
-        private void comboBoxShadowRange_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBoxShadowRange.SelectedIndex == 0)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iBlurDeferredShadowMask", "0");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fShadowDistance", "2000.0000");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fTreesMidLODSwitchDist", "3500.0000");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fShadowBiasScale", "0.5000");
-            }
-            else if (comboBoxShadowRange.SelectedIndex == 1)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iBlurDeferredShadowMask", "2");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fShadowDistance", "3500.0000");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fTreesMidLODSwitchDist", "5000.0000");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fShadowBiasScale", "0.3000");
-            }
-            else if (comboBoxShadowRange.SelectedIndex == 2)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iBlurDeferredShadowMask", "3");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fShadowDistance", "5000.0000");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fTreesMidLODSwitchDist", "10000.0000");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fShadowBiasScale", "0.2500");
-            }
-            else if (comboBoxShadowRange.SelectedIndex == 3)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iBlurDeferredShadowMask", "3");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fShadowDistance", "8000.0000");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fTreesMidLODSwitchDist", "10000000.0000");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fShadowBiasScale", "0.1500");
-            }
-            refrashShadowRange();
-            refrashShadow();
-        }
-        private void refrashShadowRange()
-        {
-            int dist = FuncParser.intRead(FormMain.iniSkyrimPrefs, "Display", "fShadowDistance");
-            if (dist <= 2000)
-            {
-                comboBoxShadowRange.SelectedIndex = 0;
-            }
-            else if (dist <= 3500)
-            {
-                comboBoxShadowRange.SelectedIndex = 1;
-            }
-            else if (dist <= 5000 && dist < 8000)
-            {
-                comboBoxShadowRange.SelectedIndex = 2;
-            }
-            else if (dist >= 8000)
-            {
-                comboBoxShadowRange.SelectedIndex = 3;
-            }
-        }
-        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
-        private void comboBoxDecals_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBoxDecals.SelectedIndex == 0)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMaxSkinDecalsPerFrame", "0");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMaxDecalsPerFrame", "0");
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Decals", "uMaxSkinDecals", "0");
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Decals", "uMaxSkinDecalsPerActor", "0");
-            }
-            else if (comboBoxDecals.SelectedIndex == 1)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMaxSkinDecalsPerFrame", "3");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMaxDecalsPerFrame", "10");
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Decals", "uMaxSkinDecals", "35");
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Decals", "uMaxSkinDecalsPerActor", "20");
-            }
-            else if (comboBoxDecals.SelectedIndex == 2)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMaxSkinDecalsPerFrame", "10");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMaxDecalsPerFrame", "30");
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Decals", "uMaxSkinDecals", "50");
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Decals", "uMaxSkinDecalsPerActor", "40");
-            }
-            else if (comboBoxDecals.SelectedIndex == 3)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMaxSkinDecalsPerFrame", "25");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "iMaxDecalsPerFrame", "100");
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Decals", "uMaxSkinDecals", "100");
-                FuncParser.iniWrite(FormMain.iniSkyrim, "Decals", "uMaxSkinDecalsPerActor", "60");
-            }
-            refrashDecals();
-        }
-        private void refrashDecals()
-        {
-            int decal = FuncParser.intRead(FormMain.iniSkyrimPrefs, "Display", "iMaxDecalsPerFrame");
-            if (decal <= 0)
-            {
-                comboBoxDecals.SelectedIndex = 0;
-            }
-            else if (decal <= 10)
-            {
-                comboBoxDecals.SelectedIndex = 1;
-            }
-            else if (decal <= 30 && decal < 100)
-            {
-                comboBoxDecals.SelectedIndex = 2;
-            }
-            else if (decal >= 100)
-            {
-                comboBoxDecals.SelectedIndex = 3;
-            }
-        }
-        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            QuestionResul("Установить Русскую озвучку?", ruLocation, enLocation);
-        }
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            QuestionResul("Установить Английскую озвучку?", enLocation, ruLocation);
-        }
-        private void QuestionResul(string question, string path1, string path2)
-        {
-            DialogResult dialogResult = MessageBox.Show(question, "Подтверждение", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                MoveVoicesFiles(path1, path2);
-            }
-        }
-        private void MoveVoicesFiles(string path1, string path2)
-        {
-            List<string> path2Files = Directory.GetFiles(path2, filesType).Select(f => f.Substring((path2).Length)).ToList();
-            foreach (string line in Directory.GetFiles(path1, filesType).Select(f => f.Substring((path1).Length)).ToList())
-            {
-                if (path2Files.Contains(line))
-                {
-                    FuncFiles.Delete(FormMain.gameFolder + @"Data\" + line);
-                    FuncFiles.MoveAnyFiles(path1 + line, FormMain.gameFolder + @"Data\" + line);
-                }
-                else
-                {
-                    FuncFiles.MoveAnyFiles(FormMain.gameFolder + @"Data\" + line, path2 + line);
-                    FuncFiles.MoveAnyFiles(path1 + line, FormMain.gameFolder + @"Data\" + line);
-                }
-            }
-            refreshLangButton();
-        }
-        private void refreshLangButton()
-        {
-            if (Directory.Exists(ruLocation))
-            {
-                if (Directory.GetFiles(ruLocation, filesType).ToList().Count > 0)
-                {
-                    pictureBox1.Enabled = true;
-                    pictureBox1.BackgroundImage = Properties.Resources.RU;
-                }
-                else
-                {
-                    pictureBox1.Enabled = false;
-                    pictureBox1.BackgroundImage = Properties.Resources.RUoff;
-                }
-            }
-            if (Directory.Exists(enLocation))
-            {
-                if (Directory.GetFiles(enLocation, filesType).ToList().Count > 0)
-                {
-                    pictureBox2.Enabled = true;
-                    pictureBox2.BackgroundImage = Properties.Resources.EN;
-                }
-                else
-                {
-                    pictureBox2.Enabled = false;
-                    pictureBox2.BackgroundImage = Properties.Resources.ENoff;
-                }
-            }
-        }
-        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
-        private void trackBarGrassDistance_Scroll(object sender, EventArgs e)
-        {
-            FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Grass", "fGrassStartFadeDistance", (trackBarGrassDistance.Value * 1000).ToString());
-            refrashGrassDistance();
-        }
-        private void refrashGrassDistance()
-        {
-            FuncMisc.RefreshTrackBar(trackBarGrassDistance, FormMain.iniSkyrimPrefs, "Grass", "fGrassStartFadeDistance", 1000, label3);
-        }
-        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
-        private void trackBarObjects_Scroll(object sender, EventArgs e)
-        {
-            FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "LOD", "fLODFadeOutMultObjects", (trackBarObjects.Value).ToString());
-            refrashObjects();
-        }
-        private void refrashObjects()
-        {
-            FuncMisc.RefreshTrackBar(trackBarObjects, FormMain.iniSkyrimPrefs, "LOD", "fLODFadeOutMultObjects", -1, label27);
-        }
-        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
-        private void trackBarItems_Scroll(object sender, EventArgs e)
-        {
-            FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "LOD", "fLODFadeOutMultItems", (trackBarItems.Value).ToString());
-            refrashItems();
-        }
-        private void refrashItems()
-        {
-            FuncMisc.RefreshTrackBar(trackBarItems, FormMain.iniSkyrimPrefs, "LOD", "fLODFadeOutMultItems", -1, label29);
-        }
-        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
-        private void trackBarActors_Scroll(object sender, EventArgs e)
-        {
-            FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "LOD", "fLODFadeOutMultActors", (trackBarActors.Value).ToString());
-            refrashActors();
-        }
-        private void refrashActors()
-        {
-            FuncMisc.RefreshTrackBar(trackBarActors, FormMain.iniSkyrimPrefs, "LOD", "fLODFadeOutMultActors", -1, label31);
-        }
-        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
-        private void trackBarLights_Scroll(object sender, EventArgs e)
-        {
-            FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fLightLODStartFade", (trackBarLights.Value * 100).ToString());
-            refrashLights();
-        }
-        private void refrashLights()
-        {
-            FuncMisc.RefreshTrackBar(trackBarLights, FormMain.iniSkyrimPrefs, "Display", "fLightLODStartFade", 100, label33);
-        }
-        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
-        private void comboBoxLODObjects_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBoxLODObjects.SelectedIndex == 0)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fTreeLoadDistance", "12500.0000");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fBlockMaximumDistance", "75000.0000");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fBlockLevel1Distance", "25000.0000");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fBlockLevel0Distance", "15000.0000");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fSplitDistanceMult", "0.4000");
-            }
-            else if (comboBoxLODObjects.SelectedIndex == 1)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fTreeLoadDistance", "25000.0000");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fBlockMaximumDistance", "100000.0000");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fBlockLevel1Distance", "32768.0000");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fBlockLevel0Distance", "20480.0000");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fSplitDistanceMult", "0.7500");
-            }
-            else if (comboBoxLODObjects.SelectedIndex == 2)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fTreeLoadDistance", "40000.0000");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fBlockMaximumDistance", "150000.0000");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fBlockLevel1Distance", "40000.0000");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fBlockLevel0Distance", "25000.0000");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fSplitDistanceMult", "1.1000");
-            }
-            else if (comboBoxLODObjects.SelectedIndex == 3)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fTreeLoadDistance", "75000.0000");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fBlockMaximumDistance", "250000.0000");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fBlockLevel1Distance", "70000.0000");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fBlockLevel0Distance", "35000.0000");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "TerrainManager", "fSplitDistanceMult", "1.5000");
-            }
-            refrashLODObjects();
-        }
-        private void refrashLODObjects()
-        {
-            int objects = FuncParser.intRead(FormMain.iniSkyrimPrefs, "TerrainManager", "fTreeLoadDistance");
-            if (objects <= 12500)
-            {
-                comboBoxLODObjects.SelectedIndex = 0;
-            }
-            else if (objects <= 25000)
-            {
-                comboBoxLODObjects.SelectedIndex = 1;
-            }
-            else if (objects <= 40000 && objects < 75000)
-            {
-                comboBoxLODObjects.SelectedIndex = 2;
-            }
-            else if (objects >= 75000)
-            {
-                comboBoxLODObjects.SelectedIndex = 3;
-            }
-        }
-        //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
-        private void buttonHideObjects_Click(object sender, EventArgs e)
-        {
-            if (hideobjects)
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fMeshLODLevel2FadeDist", "10000000.0000");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fMeshLODLevel1FadeDist", "10000000.0000");
-            }
-            else
-            {
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fMeshLODLevel2FadeDist", "5000.0000");
-                FuncParser.iniWrite(FormMain.iniSkyrimPrefs, "Display", "fMeshLODLevel1FadeDist", "5000.0000");
-            }
-            refreshHideObjects();
-        }
-        private void refreshHideObjects()
-        {
-            int objects = FuncParser.intRead(FormMain.iniSkyrimPrefs, "Display", "fMeshLODLevel1FadeDist");
-            if (objects == 10000000)
-            {
-                buttonHideObjects.BackgroundImage = Properties.Resources.buttonToggleOff;
-                hideobjects = false;
-            }
-            else
-            {
-                buttonHideObjects.BackgroundImage = Properties.Resources.buttonToggleOn;
-                hideobjects = true;
-            }
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void buttonClose_Click(object sender, EventArgs e)
