@@ -1313,11 +1313,23 @@ namespace SLMPLauncher
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            QuestionResul(installRuFiles, ruLocation, enLocation);
+            if (Directory.Exists(ruLocation))
+            {
+                if (Directory.GetFiles(ruLocation, filesType).ToList().Count > 0)
+                {
+                    QuestionResul(installRuFiles, ruLocation, enLocation);
+                }
+            }
         }
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            QuestionResul(installEnFiles, enLocation, ruLocation);
+            if (Directory.Exists(enLocation))
+            {
+                if (Directory.GetFiles(enLocation, filesType).ToList().Count > 0)
+                {
+                    QuestionResul(installEnFiles, enLocation, ruLocation);
+                }
+            }
         }
         private void QuestionResul(string question, string path1, string path2)
         {
@@ -1351,27 +1363,33 @@ namespace SLMPLauncher
             {
                 if (Directory.GetFiles(ruLocation, filesType).ToList().Count > 0)
                 {
-                    pictureBox1.Enabled = true;
-                    pictureBox1.BackgroundImage = Properties.Resources.RU;
+                    pictureBox1.BackgroundImage = Properties.Resources.RUoff;
                 }
                 else
                 {
-                    pictureBox1.Enabled = false;
-                    pictureBox1.BackgroundImage = Properties.Resources.RUoff;
+                    pictureBox1.BackgroundImage = Properties.Resources.RU;
                 }
+            }
+            else
+            {
+                pictureBox1.BackgroundImage = Properties.Resources.RUoff;
+                pictureBox1.Cursor = System.Windows.Forms.Cursors.No;
             }
             if (Directory.Exists(enLocation))
             {
                 if (Directory.GetFiles(enLocation, filesType).ToList().Count > 0)
                 {
-                    pictureBox2.Enabled = true;
-                    pictureBox2.BackgroundImage = Properties.Resources.EN;
+                    pictureBox2.BackgroundImage = Properties.Resources.ENoff;
                 }
                 else
                 {
-                    pictureBox2.Enabled = false;
-                    pictureBox2.BackgroundImage = Properties.Resources.ENoff;
+                    pictureBox2.BackgroundImage = Properties.Resources.EN;
                 }
+            }
+            else
+            {
+                pictureBox2.BackgroundImage = Properties.Resources.ENoff;
+                pictureBox2.Cursor = System.Windows.Forms.Cursors.No;
             }
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////

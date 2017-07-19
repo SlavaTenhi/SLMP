@@ -953,7 +953,6 @@
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImage = global::SLMPLauncher.Properties.Resources.ENoff;
-            this.pictureBox2.Enabled = false;
             this.pictureBox2.Location = new System.Drawing.Point(93, 467);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(80, 48);
@@ -964,7 +963,6 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::SLMPLauncher.Properties.Resources.RUoff;
-            this.pictureBox1.Enabled = false;
             this.pictureBox1.Location = new System.Drawing.Point(8, 467);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(80, 48);
